@@ -7,8 +7,8 @@
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
         <p>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Enter Your Name Here.">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email Here.">
         </p>
         <p>
             <label for="password">Password</label>
@@ -23,7 +23,7 @@
     <form method="POST" action="https://request-inspector.glitch.me/">
 
         <p>
-            <textarea name="bio" placeholder="Tell me about yourself"></textarea>
+            Bio<br><textarea name="bio" placeholder="Tell me about yourself"></textarea>
         </p>
         <p>How did you hear about us?</p>
             <label>
@@ -43,7 +43,8 @@
                 Other
             </label>
 
-        <p>What web browser are you using?</p>
+        <p>
+            <label for="web_browser">What web browser are you using?</label>
             <select name="web_browser" id="web_browser">
                 <option value="google">Google</option>
                 <option value="yahoo">Yahoo</option>
