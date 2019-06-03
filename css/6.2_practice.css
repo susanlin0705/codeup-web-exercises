@@ -6,9 +6,7 @@ header{
     margin-top: 60px;
 
 }
-.first_pic{
 
-}
 
 nav ul{
     display: flex;
@@ -17,7 +15,7 @@ nav ul{
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 15px;
     list-style-type: none;
-
+    justify-content: center;
 
 }
 nav li{
@@ -75,4 +73,22 @@ hr{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center;
+
+}
+article img{
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    margin: 30px;
+    border: 1px;
+}
+.article_product{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
