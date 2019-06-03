@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+header{
+    text-align: center;
+    font-size: 35px;
+    height: 50px;
+    margin-top: 60px;
+
+}
+.first_pic{
+
+}
+
+nav ul{
+    display: flex;
+    margin: 0px;
+    padding:0px;
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 15px;
+    list-style-type: none;
+
+
+}
+nav li{
+    padding: 10px;
+}
+nav a:visited{
+    color:black;
+}
+nav a:hover{
+    color: #ECB7C7;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+hr{
+    font-size: 2px;
+}
+.headline{
+    text-align: center;
+    font-family: Arial;
+    font-size: 30px;
+}
+.headline + p{
+    text-align: center;
+    color: gray;
+}
+.background
+{
+    background-image: url("../img/eva_shadow.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 800px;
+}
+.product{
+    height: 500px;
+    width: 30%;
+
+}
+
+.product img{
+    height: 400px;
+    width: 400px;
+}
+.product a:visited {
+    color: black;
+}
+.product a:hover {
+    color: #ECB7C7;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.product > a:nth-last-of-type(1):hover {
+    color: darkgray;
+}
+
+
+.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
