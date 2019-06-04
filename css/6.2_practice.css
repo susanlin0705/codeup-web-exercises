@@ -84,7 +84,7 @@ article img{
     margin: 30px;
     border: 1px;
 }
-.article_product{
+.article_products{
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
