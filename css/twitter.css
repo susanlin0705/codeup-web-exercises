@@ -103,6 +103,17 @@ a {
     margin-left: .5em;
     margin-right: .5em;
 }
+
+
+
+/*
+.profile-details,
+.timeline,
+.who-to-follow{
+    float: left;
+}
+ 可以合併一起使用！！！！
+ */
 .container{
     margin: 2em;
 }
@@ -131,6 +142,7 @@ a {
 
 .profile-items li{
     list-style-type: none;
+    padding: 0;
 }
 .profile-entry{
     margin: .5em;
