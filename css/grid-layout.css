@@ -32,6 +32,9 @@
 .column.one-eighth{
     width: calc(12.5%);
 }
+.column.one-sixth {
+    width: calc(16.66%);
+}
 
 @media screen and (max-width: 768px) {
     .column.one-third,
