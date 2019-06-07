@@ -24,3 +24,6 @@ h2{
 .form-check-label{
     margin-left:1em;
 }
+a:hover{
+    background-color: #E0E0E0;
+}

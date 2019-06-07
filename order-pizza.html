@@ -5,9 +5,13 @@
     <title>Order Pizza</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border">
     <a class="navbar-brand" href="#">Pizza World</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,20 +20,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-            <a class="nav-link" href="#">Order Online</a>
+            <a class="nav-link " href="#">Order Online</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link " href="#"><i class="fa fa-th-list mr-1"></i>Menu</a>
             </li>
             <li>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Store Near You!</button>
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fa fa-map-marker mr-1"></i>Search Store Near You!</button>
                 </form>
             </li>
 
         </ul>
-        <button type="button" class="btn btn-info">Sign Up</button>
+        <button type="button" class="btn border-0">
+            <i class="fa fa-user"></i>
+            Sign Up
+        </button>
     </div>
 </nav>
 <section class="title">
@@ -57,24 +64,26 @@
 
 <section class="first">
 <!--    this is the first check list-->
-    <div class="card border-success mb-3">
-        <div class="card-header bg-info border-success">Choose size and crust </div>
-        <div class="card-body text-success">
+    <div class="card border-secondary mb-3">
+        <div class="card-header bg-primary border-secondary text-light">Choose size and crust </div>
+        <div class="card-body text-secondary">
             <div class="pizza-size">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action">Hand Tossed</a>
                     <a href="#" class="list-group-item list-group-item-action">Garlic seasoned crust with a rich, buttery taste</a>
                 </div>
-                <div class="form-check-group">
-                    <div class="form-check">
+                <div class="form-check-group list-group-item bg-info">
+                    <div class="form-check ">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <label class="form-check-label text-dark" for="exampleRadios1">
                             Small (10')
                         </label>
                     </div>
+                </div>
+                <div class="form-check-group list-group-item bg-info">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <label class="form-check-label text-dark" for="exampleRadios1">
                             Medium (12')
                         </label>
                     </div>
@@ -95,37 +104,39 @@
                     <a href="#" class="list-group-item list-group-item-action">Crispy thin</a>
                     <a href="#" class="list-group-item list-group-item-action">Thin enough for optimum to crunchy ratio</a>
                 </div>
-                <div class="form-check-group">
+                <div class="form-check-group list-group-item bg-info">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios2" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <label class="form-check-label text-dark" for="exampleRadios1">
                             Medium (12')
                         </label>
                     </div>
+                </div>
+                <div class="form-check-group list-group-item bg-info">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios2" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <label class="form-check-label text-dark" for="exampleRadios1">
                             Large (14')
                         </label>
                     </div>
                 </div>
             </div>
             <div class="card-footer bg-transparent border-0 d-flex justify-content-end pr-0">
-                <div><button type="button" class="btn btn-info">Next Step ></button></div>
+                <div><button type="button" class="btn btn-info">Next Step <i class="fa fa-hand-o-right mr1"></i></button></div>
             </div>
     </div>
 </section>
 
 
 <section class="second">
-    <div class="card border-success mb-3">
-        <div class="card-header text-body bg-info">Choose Cheese and Sauce</div>
+    <div class="card border-secondary mb-3">
+        <div class="card-header bg-primary text-light">Choose Cheese and Sauce</div>
     <div class="cheese">
-        <div class="card-body text-success">
+        <div class="card-body text-secondary">
             <div class="how-much">
                 <div class="card border mb-3">
-                    <div class="card-header">Cheese</div>
-                    <div class="card-body text-dark">
+                    <div class="card-header text-dark">Cheese</div>
+                    <div class="card-body text-dar bg-info">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">How Much</label>
                             <select class="form-control" id="exampleFormControlSelect1">
@@ -141,11 +152,11 @@
                 </div>
             </div>
         </div>
-        <div class="card-body text-success">
+        <div class="card-body text-secondary">
             <div class="how-much">
                 <div class="card border mb-3">
-                    <div class="card-header">Sauce</div>
-                    <div class="card-body text-dark">
+                    <div class="card-header text-dark">Sauce</div>
+                    <div class="card-body text-dark bg-info">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">What Type?</label>
                             <select class="form-control" id="exampleFormControlSelect1">
@@ -172,94 +183,101 @@
             </div>
         </div>
         <div class="card-footer bg-transparent border-0 d-flex justify-content-end">
-            <button class="btn btn-outline-secondary mr-1" type="button">Previous step</button>
-            <button class="btn btn-info" type="button">Next step</button>
+            <button class="btn btn-outline-secondary mr-1" type="button"> <i class="fa fa-hand-o-left mr-1"></i>Previous step </button>
+            <button class="btn btn-info mr-1" type="button">Next step <i class="fa fa-hand-o-right mr-1"></i></button>
         </div>
         </div>
     </div>
 </section>
 
 <section class="third">
-    <div class="card border-success mb-3" >
-        <div class="card-header border-success bg-info">Choose Toppings</div>
+    <div class="card border-secondary mb-3" >
+        <div class="card-header bg-primary text-light">Choose Toppings</div>
+        <section class="meat">
         <div class="card-body text-success">
-    <div class="card-header border">Choose Meats</div>
-    <div class="card-body text-dark">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+            <div class="card-header border text-dark" >Choose Meats</div>
+            <div class="card-body text-dark list-group-item bg-info">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="green-pepper">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Beef
+                    </label>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Beef">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="mushrooms">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Ham
+                    </label>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ham">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="onions">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Philly Steak
+                    </label>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Philly Steak">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="jalepeño Peppers">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Bacon
+                    </label>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox"placeholder="Bacon">
+
         </div>
-    </div>
+        </section>
     </div>
         <div class="card-body text-success">
-            <div class="card-header border" >Choose Non-Meats</div>
-            <div class="card-body text-dark">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                        </div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Gren Peppers">
+            <div class="card-header border text-dark" >Choose Non-Meats</div>
+            <div class="card-body text-dark list-group-item bg-info">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="green-pepper">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Green Pepper
+                    </label>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                        </div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="mushrooms">
+            </div>
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="mushrooms">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Mushrooms
+                    </label>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                        </div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Onions">
+            </div>
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="onions">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Onions
+                    </label>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                        </div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with checkbox"placeholder="Jalepeño Peppers">
+            </div>
+            <div class="form-check-group list-group-item bg-info">
+                <div class="form-check text-dark">
+                    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="jalepeño Peppers">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Jalepeño Peppers
+                    </label>
                 </div>
+            </div>
+
             </div>
         </div>
 
 
         <div class="card-footer bg-transparent border-0 d-flex justify-content-end ">
-            <div><button type="button" class="btn btn-info">Checkout</button></div>
+            <div>
+                <button type="button" class="btn btn-info">
+                    <i class="fa fa-shopping-cart"></i>
+                Checkout
+                </button>
+            </div>
         </div>
     </div>
 </section>
