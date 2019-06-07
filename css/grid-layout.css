@@ -21,7 +21,7 @@
     float: left;
 }
 .column.one-third {
-    width: calc(33.33%);
+    width: calc(calc(100% / 3));
 }
 .column.one-half {
     width: calc(50%);

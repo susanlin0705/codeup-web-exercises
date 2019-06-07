@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Pizza</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="#">Order Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Store Near You!</button>
+                </form>
+            </li>
+
+        </ul>
+        <button type="button" class="btn btn-info">Sign Up</button>
+    </div>
+</nav>
+<section class="title">
+    <div class="jumbotron jumbotron-fluid d-none d-lg-block">
+        <h1 class="d-block  p-3 mb-2 text-secondary">Welcome to Pizza World</h1>
+    </div>
+</section>
+<section class="build-pizza">
+    <h2>Build your own pizza!</h2>
+    <hr>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active " href="#"><span class="badge badge-pill badge-secondary mr-1">1</span>Size and crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary mr-1">2</span>Choose ands Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary mr-1">3</span>Toppings</a>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<section class="first">
+<!--    this is the first check list-->
+    <div class="card border-success mb-3">
+        <div class="card-header bg-info border-success">Choose size and crust </div>
+        <div class="card-body text-success">
+            <div class="pizza-size">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Hand Tossed</a>
+                    <a href="#" class="list-group-item list-group-item-action">Garlic seasoned crust with a rich, buttery taste</a>
+                </div>
+                <div class="form-check-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Small (10')
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Medium (12')
+                        </label>
+                    </div>
+                </div>
+    <!--                <div class="input-group">-->
+<!--                    <div class="input-group-prepend">-->
+<!--                        <div class="input-group-text">-->
+<!--                            <input type="radio" name="small-medium" aria-label="Radio button for following text input">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="mr-2">Medium (12')</div>-->
+<!--&lt;!&ndash;                    <input type="text" class="form-control" aria-label="Text input with radio button" >&ndash;&gt;-->
+
+<!--                </div>-->
+            </div>
+            <div class="pizza-size-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Crispy thin</a>
+                    <a href="#" class="list-group-item list-group-item-action">Thin enough for optimum to crunchy ratio</a>
+                </div>
+                <div class="form-check-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios2" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Medium (12')
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios2" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Large (14')
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 d-flex justify-content-end pr-0">
+                <div><button type="button" class="btn btn-info">Next Step ></button></div>
+            </div>
+    </div>
+</section>
+
+
+<section class="second">
+    <div class="card border-success mb-3">
+        <div class="card-header text-body bg-info">Choose Cheese and Sauce</div>
+    <div class="cheese">
+        <div class="card-body text-success">
+            <div class="how-much">
+                <div class="card border mb-3">
+                    <div class="card-header">Cheese</div>
+                    <div class="card-body text-dark">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">How Much</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Light</option>
+                                <option>Normal</option>
+                                <option>Extra</option>
+                                <option>Double</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body text-success">
+            <div class="how-much">
+                <div class="card border mb-3">
+                    <div class="card-header">Sauce</div>
+                    <div class="card-body text-dark">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">What Type?</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Tomato sauce</option>
+                                <option>Marinara sauce</option>
+                                <option>BBQ Sauce</option>
+                                <option>Alfredo Sauce</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">How Much</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Light</option>
+                                <option>Normal</option>
+                                <option>Extra</option>
+                                <option>Double</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent border-0 d-flex justify-content-end">
+            <button class="btn btn-outline-secondary mr-1" type="button">Previous step</button>
+            <button class="btn btn-info" type="button">Next step</button>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section class="third">
+    <div class="card border-success mb-3" >
+        <div class="card-header border-success bg-info">Choose Toppings</div>
+        <div class="card-body text-success">
+    <div class="card-header border">Choose Meats</div>
+    <div class="card-body text-dark">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Beef">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ham">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Philly Steak">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox"placeholder="Bacon">
+        </div>
+    </div>
+    </div>
+        <div class="card-body text-success">
+            <div class="card-header border" >Choose Non-Meats</div>
+            <div class="card-body text-dark">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Gren Peppers">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="mushrooms">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Onions">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox"placeholder="Jalepeño Peppers">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-footer bg-transparent border-0 d-flex justify-content-end ">
+            <div><button type="button" class="btn btn-info">Checkout</button></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
