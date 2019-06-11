@@ -73,6 +73,7 @@
     font-weight: bold;
     font-family: 'Anton', sans-serif;
     text-align: right;
+
 }
 .orange{
     background-color: #EB9D3A;
@@ -241,6 +242,35 @@
 
     .navbar li:nth-of-type(6) {
         margin-right: auto;
+    }
+    .circle{
+        /*margin-left: 70px;*/
+        /*margin-right: 70px;*/
+        /*margin-right: auto;*/
+    }
+    .red, .orange, .green, .teal{
+        height: 200px;
+        width: 200px ;
+        text-align: center;
+    }
+    .letter{
+        margin-top: 69px;
+        font-size: 40px;
+    }
+    .small-red, .small-orange, .small-green, .small-teal{
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+    }
+    .feature{
+        font-size: 20px;
+    }
+    .macbook,{
+        margin-top: 30px;
+    }
+    .selected{
+        font-size: 30px;
+        text-align: center;
     }
 
 }
