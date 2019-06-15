@@ -32,7 +32,7 @@
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
-    var myName = "3";
+    var myName = "Susan";
     console.log(sayHello(myName));
 
 
