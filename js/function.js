@@ -76,13 +76,29 @@
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
 
-    function calculateTip(percentage, total) {
-        return ((percentage*.01) * total);
+    function calculateTip(tipPercentage, totalAmount){
+        return (tipPercentage*.01)*totalAmount;
     }
 
-    var total = Number(prompt("How much is your total?"));
-    var percentage= Number(prompt("what percent would you like to tip?"));
-    alert("your tip is" + calculateTip(percentage, total).toFixed(2) );
+    var tipPercentage=Number(prompt("What percentage would you like to tip?"));
+    var totalAmount=Number(prompt("How much is your total?"));
+
+    alert("Your tip is " + calculateTip(tipPercentage, totalAmount));
+
+
+
+
+
+
+
+
+    // function calculateTip(percentage, total) {
+    //     return ((percentage*.01) * total);
+    // }
+    //
+    // var total = Number(prompt("How much is your total?"));
+    // var percentage= Number(prompt("what percent would you like to tip?"));
+    // alert("your tip is" + calculateTip(percentage, total).toFixed(2) );
     /**
      * TODO:
      * Use prompt and alert in combination with your calculateTip function to
@@ -106,12 +122,32 @@
      *
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
-     function applyDiscount(price, discount){
-        return price-(price * (discount));
+    function applyDiscount(totalPrice, discountPercentage){
+        return totalPrice-discountTotal
+    }
 
-     }
-     var price = Number(prompt("How much is this item?"))
-     var discount = Number(prompt("Does it have a discount? If yes, please type in"));
-     alert("Your total after discount is " + applyDiscount(price, discount));
+    var totalPrice=Number(prompt("What's is your total price?"));
+    var discountPercentage=Number(prompt("What is your discount percentage?"));
+    var discountTotal= totalPrice*(discountPercentage*.01);
+
+
+    alert("Your total is" + applyDiscount(totalPrice,discountTotal));
+
+
+
+
+
+
+
+
+
+
+     // function applyDiscount(price, discount){
+     //    return price-(price * (discount));
+     //
+     // }
+     // var price = Number(prompt("How much is this item?"))
+     // var discount = Number(prompt("Does it have a discount? If yes, please type in"));
+     // alert("Your total after discount is " + applyDiscount(price, discount));
 
 })();
