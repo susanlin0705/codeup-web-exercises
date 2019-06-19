@@ -13,7 +13,7 @@
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log(names.length);
+    console.log("The length of the names array is "+ names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
@@ -54,20 +54,27 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    function first() {
-        return names[0];
+    //THIS WILL LIMIT IT
+    // function first() {
+    //     return names[0];
+    // }
+    // console.log("The name is "+ first(names));
+
+
+    // This is way won't limit the array!!
+    function first(array){
+        return array[0];
     }
     console.log("The name is "+ first(names));
 
-
-    function second() {
-        return names[1];
+    function second(array) {
+        return array[1];
     }
     console.log("The name is "+ second(names));
 
 
-    function last() {
-        return names[3];
+    function last(array) {
+        return array[array.length-1];
     }
     console.log("The name is "+ last(names));
 
