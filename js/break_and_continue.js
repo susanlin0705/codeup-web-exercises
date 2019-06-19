@@ -31,7 +31,7 @@ while(true){
 var totalNumber=0;
 while (totalNumber<=50){
     // var totalNumber=Math.floor(Math.random() * 50) + 1;
-    totalNumber++
+    totalNumber++;
     if (totalNumber%2===0){
         continue;
     }
