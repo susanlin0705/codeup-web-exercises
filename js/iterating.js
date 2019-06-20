@@ -58,7 +58,7 @@
     // function first() {
     //     return names[0];
     // }
-    // console.log("The name is "+ first(names));
+
 
 
     // This is way won't limit the array!!
