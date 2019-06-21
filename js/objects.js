@@ -70,6 +70,33 @@
 
 
 
+
+
+    // function calculateDiscount(total) {
+    //     var output=0;
+    //     if (total>200){
+    //         output= total*.88;
+    //     }
+    //     return output;
+    // }
+    //
+    //
+    // function convertToCurrency(num) {
+    //     return "$" + num.toFixed(2);
+    // }
+    //
+    // function displayShopperInfo(shopper) {
+    //     var output="";
+    //     var amount= convertToCurrency(shopper.amount);
+    //     var discount= convertToCurrency(calculateDiscount(shopper.amount));
+    //     var finalAmount= calculateDiscount(num.shopper.amount-calculateDiscount(shopper.amount));
+    //     output+= shopper.name+"spent" +amount;
+    //     output+=" and received a discount of" + discount;
+    //
+    //
+    // }
+
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -160,5 +187,17 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    // books.forEach(function (book, i) {
+    //     var output=""
+    //     output+= "Book # "+(i+1)+"\n";
+    //     output+= "Title: "+book.title+ "\n";
+    // }
+
+
+
+
+
+
+
 
 })();
