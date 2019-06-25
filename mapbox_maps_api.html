@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <h1>My First Map</h1>
+    <button id="button">Search</button>
+    <div id="map"></div>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+    <script src="mapbox-geocoder-utils.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script>
+        function geocode(search, mapboxToken) {
+            var baseUrl = 'https://api.mapbox.com';
+            var endPoint = '/geocoding/v5/mapbox.places/';
+            return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + mapboxToken)
+                .then(function(res) {
+                    return res.json();
+                    // to get all the data from the request, comment out the following three lines...
+                }).then(function(data) {
+                    return data.features[0].center;
+                });
+        }
+        mapboxgl.accessToken = mapboxToken;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 15,
+            center: [-98.4916, 29.4252]
+        });
+        var texasDeBrazil= {
+            name:"Texas De Brazil",
+            address: "313 E Houston St, San Antonio, TX 78205",
+            popupHTML: "<p>Best Brazilian Grill Place</p>"
+        };
+        var kimura={
+            name:"Kimura",
+            address:"152 E Pecan St, San Antonio, TX 78205",
+            popupHTML:"<p>Great Ramen!</p>"
+        };
+        var zincBistro={
+            name:"Zinc Bistro",
+            address:"207 N Presa St, San Antonio, TX 78205",
+            popupHTML:"<p>Great Place to Hang Out</p>"
+        };
+
+
+
+        function placeMarkerAndPopup(info, mapboxToken, map) {
+            geocode(info.address, mapboxToken).then(function(coordinates) {
+                console.log(coordinates);
+                var popup = new mapboxgl.Popup({closeButton: true})
+                    .setHTML(info.popupHTML)
+                    .setLngLat(coordinates);
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                    .setPopup(popup);
+                popup.addTo(map);
+            });
+
+        }
+
+        // placeMarkerAndPopup(texasDeBrazil, mapboxToken, map);
+        // placeMarkerAndPopup(kimura, mapboxToken, map);
+        // placeMarkerAndPopup(zincBistro, mapboxToken, map);
+        var arrayOfRestaurants = [texasDeBrazil,kimura,zincBistro];
+        arrayOfRestaurants.forEach(function(names){
+            console.log(names);
+            placeMarkerAndPopup(names, mapboxToken, map);
+        });
+
+
+
+        // map.setZoom(15);
+        // document.getElementById('button').addEventListener("click",function () {
+        //     var marker = new mapboxgl.Marker()
+        //         .setLngLat([-98.4916, 29.4260])
+        //         .addTo(map);
+        //     var popup = new mapboxgl.Popup()
+        //         .setLngLat([-98.489615, 29.426827])
+        //         .setHTML("<p>Codeup Rocks!</p>")
+        //         .addTo(map);
+        //     map.setZoom(15);
+        //
+        //
+        // })
+
+
+    </script>
+
+</body>
+</html>
