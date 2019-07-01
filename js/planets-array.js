@@ -49,4 +49,22 @@
     var planetsSorting= planets.sort();
     console.log(planetsSorting);
 
+
+    // planets.forEach(function(planet, i){
+    //     if(i % 2 === 0) {
+    //     console.log("here is the list of the planets "+ planet)
+    //    }
+    // })
+    // planets.forEach(function (planet){
+    //     console.log("this is planet "+ planet)
+    // });
+    planets.forEach(function(planet,i){
+        if(i%2===1){
+            console.log("this is the planet "+ planet+i)
+        }
+
+    })
+
+
+
 })();

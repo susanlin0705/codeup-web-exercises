@@ -113,37 +113,37 @@
              {
                  author:{
                      firstName: "James",
-                     lastName: "Patterson",
+                     lastName: "Patterson"
                  },
-                 title: "Unsolved",
+                 title: "Unsolved"
              },
             {
                 author:{
                     firstName: "Elizabeth",
-                    lastName: "Gillbert",
+                    lastName: "Gillbert"
                 },
-                title: "City Of Girls",
+                title: "City Of Girls"
             },
             {
                 author:{
                     firstName: "Jennifer",
-                    lastName: "Weiner",
+                    lastName: "Weiner"
                 },
-                title: "Mrs. Everything",
+                title: "Mrs. Everything"
             },
             {
                 author:{
                     firstName: "Elin",
-                    lastName: "Hilderbrand",
+                    lastName: "Hilderbrand"
                 },
-                title: "Summer Of '69",
+                title: "Summer Of '69"
             },
             {
                 author:{
                     firstName: "Brad",
-                    lastName: "Thor",
+                    lastName: "Thor"
                 },
-                title: "Backlash",
+                title: "Backlash"
             },
     ];
     console.log(books[0].title);

@@ -49,7 +49,7 @@
 
         function placeMarkerAndPopup(info, mapboxToken, map) {
             geocode(info.address, mapboxToken).then(function(coordinates) {
-                console.log(coordinates);
+
                 var popup = new mapboxgl.Popup({closeButton: true})
                     .setHTML(info.popupHTML)
                     .setLngLat(coordinates);

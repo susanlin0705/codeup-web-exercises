@@ -23,3 +23,6 @@ do {
 
 }while (allCones>0);
 console.log("I sold out!");
+
+
+
