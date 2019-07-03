@@ -11,7 +11,7 @@ $("body").css("background-color", "#F1F1F1");
 // alert(content);
 //
 //
-//
+//this is to show up on the web page
 // $('#title-why').click(function(){
 //     alert("Isn't jQuery easy to learn?!")
 // });
@@ -23,14 +23,14 @@ $("body").css("background-color", "#F1F1F1");
 // $('h1,p,li').css("background-color","lightpink")
 // alert($('h1').html());
 
-$("#title").click(function(){
+$("h1").click(function(){
     $(this).css("background-color","#7CB243")
 });
 
 $("p").dblclick(function(){
-    $(this).css("font-size","18px")
+    $("p").css("font-size","18px")
 });
-
+//('p') will do it at once ,("this ")will do it separately//
 $('.codeup').hover(
     function(){
     $(this).css("color","red")
