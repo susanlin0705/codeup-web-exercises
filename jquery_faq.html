@@ -29,10 +29,22 @@
             display: flex;
             margin: auto;
         }
+        #second-ask{
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            font-size: 100px;
+        }
 
     </style>
+
 </head>
 <body>
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span><button id="do-not-show">X</button></span>
+    </div>
+
     <h1>Frequently Asked Questions</h1>
         <dl>
             <dt>How old is the National Park System?</dt>
@@ -106,8 +118,8 @@
 
     <h3>Picture Frame</h3>
     <div class="container">
-        <div class="row1 pic" id="pic-left">
-            <img src="img/bigbend.jpeg" >
+        <div class="row1 pic" >
+            <img src="img/bigbend.jpeg" id="pic-left" >
             <button class="btn-switch" id="switch1">Switch</button>
         </div>
         <div class="row2 pic">
@@ -119,10 +131,12 @@
             <button class="btn-switch" id="switch3">Switch</button>
         </div>
     </div>
+    <h2 id="second-ask">REGISTER THIS WEBSITE</h2>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function() {
+            console.log($("#pic-center").attr("src"));
 
             $(".invisible").toggle("");
             $(".invisible").css("visibility", "hidden");
@@ -134,31 +148,54 @@
         });
 
         $(".yellow").click(function(){
-            // $("li:last-child").css("background-color", "yellow")
-            $(".park-data").each(function (){
-                $(this).children().last().css("background-color","yellow")
-            })
+            $("li:last-child").css("background-color", "yellow")
+            $("li:nth-child(3)").css("background-color", "lightgrey")
+            // $(".park-data").each(function (){
+            //     $(this).children().last().css("background-color","yellow")
+            //
+            // })
 
 
             });
 
         $(".park-list").click(function () {
             $(".park-data").children().css("font-weight","bold")
-        })
+        });
         $("li").click(function(){
             $(this).parent().children().first().css("color","blue")
-        })
-
+        });
 
         $("#switch1").click(function(){
-            if($("#row1").attr("src") == big-bend){
-                $("")
-            }
+            var imgLeft = $("#pic-left").attr("src");
+            var imgCenter = $("#pic-center").attr('src');
+            $("#pic-left").attr("src",imgCenter);
+            $("#pic-center").attr("src",imgLeft)
+
+        });
+        $("#switch3").click(function(){
+            var imgRight = $("#pic-right").attr('src');
+            var imgCenter = $("#pic-center").attr('src');
+            $("#pic-right").attr("src",imgCenter);
+            $("#pic-center").attr("src",imgRight);
+
+        });
 
 
 
-        })
 
+            
+            
+            
+        $("#do-not-show").click(function () {
+            $("div").hide();
+        });
+        $("h3").click(function(){
+            $("ul").slideToggle(500);
+        });
+
+
+        $("#second-ask").hide();
+        $('#second-ask').delay(8000).fadeIn().delay(8000).fadeOut();
 
 
 
