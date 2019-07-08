@@ -14,6 +14,22 @@
             width: 500px;
             padding:10px;
         }
+        .pic>img{
+            width: 300px;
+            height: 300px;
+            border: 2px solid darkgrey;
+            display: flex;
+            margin-left: 100px;
+        }
+        .btn-switch{
+            margin-left: 225px;
+            margin-top: 20px;
+        }
+        .container{
+            display: flex;
+            margin: auto;
+        }
+
     </style>
 </head>
 <body>
@@ -61,6 +77,48 @@
                 </dd>
         </dl>
 
+    <button class="yellow">Click me</button>
+
+    <h2>Parks List</h2>
+    <h3 class="park-list">Big Bend National Park</h3>
+        <ul id="big-bend" class="park-data">
+            <li>Big Bend National Park is considered to be the largest Chihuahuan Desert protected region in the country.</li>
+            <li>There are more than 3600 species of insects found in Big Bend National Park.</li>
+            <li>There are water pools, mountains, desert, rivers, waterfalls, and forest within Big Bend National Park.</li>
+            <li>Visitors to Big Bend National Park can cycle, hike, take day trips hiking though the park, embark on river trips, or even drive through the park enjoying the sites.</li>
+        </ul>
+    <h3 class="park-list">Dinosaur Valley State Park</h3>
+        <ul id="dinosaur-park" class="park-data">
+            <li>Around 113 million years ago, this area was at the edge of an advancing and retreating sea.</li>
+            <li>Many plants of the Edwards Plateau grow in the upland areas of the park. These include Ashe juniper, live oak, Texas red oak and Texas ash, with some post oak and mesquite, along with various grasses and shrubs.</li>
+            <li>Birders can see many species of both resident and migrant birds, including wild turkeys, golden-cheeked warblers and black-capped vireos</li>
+            <li>For many years, scientists thought the brachiosaur Pleurocoelus made the sauropod tracks. But new bones found nearby in 1996 changed their minds</li>
+        </ul>
+    <h3 class="park-list">Guadalupe Mountains National Park</h3>
+        <ul id="mountains-park" class="park-data">
+            <li>The highest point in Texas is also the highest point of the Guadalupe Mountains. This is Guadalupe Peak, sitting at 8,751 feet.</li>
+            <li>There are 16 different species of bats found in Guadalupe National Park.</li>
+            <li>The hottest recorded temperature in Guadalupe National Park was 105 degrees Fahrenheit, in 1994.</li>
+            <li>When Guadalupe National Park opened in 1971 there were just over 27,000 visitors. In 2012 there were 159,360 visitors to the park.</li>
+        </ul>
+
+
+
+    <h3>Picture Frame</h3>
+    <div class="container">
+        <div class="row1 pic" id="pic-left">
+            <img src="img/bigbend.jpeg" >
+            <button class="btn-switch" id="switch1">Switch</button>
+        </div>
+        <div class="row2 pic">
+            <img src="img/dino.jpeg" id="pic-center">
+            <button class="btn-switch" id="switch2">Switch</button>
+        </div>
+        <div class="row3 pic">
+            <img src="img/mountain.jpeg" id="pic-right" >
+            <button class="btn-switch" id="switch3">Switch</button>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <script>
@@ -74,6 +132,39 @@
             $(".invisible").css("visibility","visible");
 
         });
+
+        $(".yellow").click(function(){
+            // $("li:last-child").css("background-color", "yellow")
+            $(".park-data").each(function (){
+                $(this).children().last().css("background-color","yellow")
+            })
+
+
+            });
+
+        $(".park-list").click(function () {
+            $(".park-data").children().css("font-weight","bold")
+        })
+        $("li").click(function(){
+            $(this).parent().children().first().css("color","blue")
+        })
+
+
+        $("#switch1").click(function(){
+            if($("#row1").attr("src") == big-bend){
+                $("")
+            }
+
+
+
+        })
+
+
+
+
+
+
+
 
 
 

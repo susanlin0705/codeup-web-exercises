@@ -39,13 +39,22 @@ var salesReport = {
             total += Number(employee.salesUnits)
         });
         return total
+    },
+    getAverageSalesPerEmployee:function(){
+
+        var total=0
+        this.employees.forEach(function(salesTotal){
+            total+= Number(salesTotal.salesUnits)
+        })
+        return total/this.employees.length
     }
 
 };
 
 
 console.log(salesReport.getEmployeeCount());
-console.log(salesReport.getTotalNumberOfSales())
+console.log(salesReport.getTotalNumberOfSales());
+console.log(salesReport.getAverageSalesPerEmployee())
 
 salesReport.employees.forEach(function(employee){
     console.log(employee.number+ '\n'+ employee.firstName+'\n'+ employee.lastName+'\n'+ employee.salesUnits)
