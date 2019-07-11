@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-practice</title>
+</head>
+<body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+
+     // $.ajax({
+     //     "url": "https://swapi.co/api/films",
+     //     "type": "GET",
+     //     "data": {
+     //         "search": "A New Hope"
+     //     }
+     // }).done(function(data, status, jqXhr) {
+     //     // console.log(status);
+     //     console.log(data);
+     //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+     // }).fail(function(jqXhr, status, error) {
+     //     console.log("Request failed! " + status);
+     // }).always(function() {
+     //     console.log("Request made.");
+     // });
+     //
+     //
+     //
+     // $.ajax('https://swapi.co/api/people/').done(function (data) {
+     //     console.log(data.results[0].height);
+     //     console.log(data.next);
+     //     console.log(data.results[2].mass)
+     // });
+     //
+     // $.ajax({
+     //     "url":"https://swapi.co/api/people/",
+     //     "type":"GET",
+     //     "data":{
+     //         "name":"Leia"
+     //     }
+     // }).done(function (data2) {
+     //     console.log(data2);
+     //     console.log("the name "+ data2.results[4].name)
+     // })
+     // ;
+    $.ajax("https://pokeapi.co/api/v2/pokemon/ditto/").done(function(data1){
+        console.log(data1.abilities[1].ability.name);
+    })
+
+
+
+    $.ajax({
+        "url":"https://pokeapi.co/api/v2/move/",
+        "type":"GET",
+        "data":{
+            "search":"pound"
+        }
+    }).done(function (data3) {
+
+    console.log("this poke name is "+ data3.results[0].name)
+     })
+</script>
+</body>
+</html>

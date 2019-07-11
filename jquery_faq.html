@@ -136,15 +136,12 @@
 
     <script>
         $(document).ready(function() {
-            console.log($("#pic-center").attr("src"));
 
-            $(".invisible").toggle("");
-            $(".invisible").css("visibility", "hidden");
+            $("dd").hide();
 
         $("dt").click(function () {
-            $(".invisible").toggle("");
-            $(".invisible").css("visibility","visible");
-
+            console.log("clicked")
+            $(this).next().toggle();
         });
 
         $(".yellow").click(function(){
@@ -181,6 +178,21 @@
         });
 
 
+        $("#switch2").click(function () {
+            var randomNumber= Math.floor(Math.random()*2);
+            var imgRight = $("#pic-right").attr('src');
+            var imgLeft = $("#pic-left").attr("src");
+            var imgCenter = $("#pic-center").attr('src');
+            if(randomNumber===0){
+                $("#pic-center").attr("src",imgLeft)
+                $("#pic-left").attr("src",imgCenter)
+            }else{
+                $("#pic-center").attr("src",imgRight)
+                $("#pic-right").attr("src",imgCenter)
+            }
+        });
+
+
 
 
             
@@ -196,6 +208,11 @@
 
         $("#second-ask").hide();
         $('#second-ask').delay(8000).fadeIn().delay(8000).fadeOut();
+
+        // vanilla JS
+        //     setInterval(function () {
+        //         $("#second-ask").fadeIn();
+        //     },2000)
 
 
 
