@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<ul class="nav nav-pills bg-info">
+    <li class="nav-item">
+        <a class="nav-link text-white" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-white" href="#">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-white" href="#">Search</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link  text-white" href="#">Contact</a>
+    </li>
+</ul>
+    <div id="posts">
 
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    (function() {
+        var blogs = $.ajax("data/blog.json")
+        blogs.done(function(posts){
+            var data = ''
+            posts.forEach(function(post){
+               data+= "<h2 class='text-center mt-5 text-success'>" + post.title + "</h2>";
+               data+= "<p class='m-5'>" + post.content + "</p>";
+               data+= "<p class='text-right mr-5'>" + post.categories+ "</p>";
+               data+= "<p class='text-right mr-5'>" + post.date + "</p>";
+            })
+
+            $("#posts").html(data);
+
+
+
+
+
+        })
+
+
+
+
+
+
+    })();
+</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+<!--var blog = $.ajax("data/blog.json");-->
+<!--blog.done(function (data) {-->
+
+<!--var divStr="";-->
+
+<!--data.forEach(function (postBlog){-->
+<!--divStr+= "<h2 class='text-center mt-5 text-success'>"+ postBlog.title+ "</h2>";-->
+<!--divStr+= "<p class='m-5'>"+ postBlog.content + "</p>";-->
+<!--divStr+= "<p class='text-right mr-5'>"+ "Categories : " + postBlog.categories + "</p>";-->
+<!--divStr+= "<p class='text-right mr-5'>"+ "Date : " + postBlog.date + "</p>";-->
+<!--})-->
+<!--$("#posts").html(divStr)-->
+
+
+
+<!--})-->
