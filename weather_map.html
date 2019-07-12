@@ -30,13 +30,11 @@
 
 
 <div id="date"></div>
-<form method="">
     <label for="latitude">Latitude</label>
     <input type="text" name="latitude" id="latitude">
     <label for="longitude">Longitude</label>
     <input type="text" name="longitude" id="longitude">
     <button id="submit" onclick="retrieve()">Search</button>
-</form>
 
 
 <div id="map"></div>
@@ -74,14 +72,16 @@
 
         var latitude = document.getElementById("latitude").value;
         var longitude= document.getElementById("longitude").value;
-        var userPosition= latitude + "," + longitude
+        // var userPosition= latitude + "," + longitude
 
 
         console.log(userPosition);
     }
 
-    var sub = document.getElementById('submit');
-    sub.addEventListener('click', retrieve);
+    // var sub = document.getElementById('submit');
+    // sub.addEventListener('click', retrieve);
+
+    $("#submit").click(retrieve);
 
 
     var icons = [{name:"clear-day", url:"Sun.svg"}, {name:"clear-night",url:"Moon.svg"}, {name:"rain",url:"Cloud-Rain.svg"}, {name:"snow",url:"Cloud-Snow.svg"}, {name:"sleet",url:"Cloud-Hail.svg"}, {name:"wind",url:"Cloud-Wind.svg"},
