@@ -72,15 +72,16 @@
 
     function retrieve() {
 
-        // var latitude = document.getElementById("latitude").value;
-        // var longitude= document.getElementById("longitude").value;
-        // var userPosition= latitude + "," + longitude
+        var latitude = document.getElementById("latitude").value;
+        var longitude= document.getElementById("longitude").value;
+        var userPosition= latitude + "," + longitude
 
 
         console.log(userPosition);
     }
 
-    $("#submit").click(retrieve);
+    var sub = document.getElementById('submit');
+    sub.addEventListener('click', retrieve);
 
 
     var icons = [{name:"clear-day", url:"Sun.svg"}, {name:"clear-night",url:"Moon.svg"}, {name:"rain",url:"Cloud-Rain.svg"}, {name:"snow",url:"Cloud-Snow.svg"}, {name:"sleet",url:"Cloud-Hail.svg"}, {name:"wind",url:"Cloud-Wind.svg"},
