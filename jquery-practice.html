@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <script src="/js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>cat FAQs</h1>
+<div id="cat">
+    <dl>
+        <dt class="cat-faq">My Adopted Cat just Started Kneading Me; Why?</dt>
+            <dd class="invisible">
+                Nursing kittens knead their mother to get the milk flowing so they can nurse. When a cat kneads, it’s usually a sign of affection and happiness so with your adopted cat it means she has adjusted to you and is happy. She likes you. Consider this the highest complement.
+            </dd>
+        <dt class="cat-faq">My Cat’s Tail Movements Confuse Me</dt>
+            <dd class="invisible">
+                Dog owners are often confused by a cat’s tail movements. The movements seem, at times, to be similar enough that perhaps they should have the same meanings. Yet at other times, they are completely different. Cats like to keep us guessing.
+            </dd>
+        <dt class="cat-faq">Do Cats Purr When They’re Happy?</dt>
+            <dd class="invisible">
+                These inconsistencies are what make cats so mysterious and confusing for people. Again, as with tail movements, don’t look (or listen) to one part of your cat’s communication. Instead, look at all of it to determine what she’s trying to communicate.
+            </dd>
+        <dt class="cat-faq">Are All Calico Cats Always Female?</dt>
+            <dd class="invisible">
+                Although calico cats are predomiantly female, every once in a while a male cat will show up with a calico pattern. These males generally have an extra X chromosome (they are XXY instead of the normal XY) and that extra X allows them to have both orange and black. These males are usually sterile.
+            </dd>
+        <dt class="cat-faq">Why Does My Cat Bury His Food?</dt>
+            <dd class="invisible">
+                It’s not unusual for cats to try to bury their food or water after eating or drinking. Some merely paw at the floor while others are more diligent and will pull a small throw rug or towel over the bowl. This behavior is an instinctive one shown by wild cats of many species and sizes.
+            </dd>
+    </dl>
+</div>
+
+<h2 id="delay">please sign-up</h2>
+<button id="btn">click</button>
+
+<h2>Parks List</h2>
+<h3 class="park-list">Big Bend National Park</h3>
+<ul id="big-bend" class="park-data">
+    <li>Big Bend National Park is considered to be the largest Chihuahuan Desert protected region in the country.</li>
+    <li>There are more than 3600 species of insects found in Big Bend National Park.</li>
+    <li>There are water pools, mountains, desert, rivers, waterfalls, and forest within Big Bend National Park.</li>
+    <li>Visitors to Big Bend National Park can cycle, hike, take day trips hiking though the park, embark on river trips, or even drive through the park enjoying the sites.</li>
+</ul>
+<h3 class="park-list">Dinosaur Valley State Park</h3>
+<ul id="dinosaur-park" class="park-data">
+    <li>Around 113 million years ago, this area was at the edge of an advancing and retreating sea.</li>
+    <li>Many plants of the Edwards Plateau grow in the upland areas of the park. These include Ashe juniper, live oak, Texas red oak and Texas ash, with some post oak and mesquite, along with various grasses and shrubs.</li>
+    <li>Birders can see many species of both resident and migrant birds, including wild turkeys, golden-cheeked warblers and black-capped vireos</li>
+    <li>For many years, scientists thought the brachiosaur Pleurocoelus made the sauropod tracks. But new bones found nearby in 1996 changed their minds</li>
+</ul>
+<h3 class="park-list">Guadalupe Mountains National Park</h3>
+<ul id="mountains-park" class="park-data">
+    <li>The highest point in Texas is also the highest point of the Guadalupe Mountains. This is Guadalupe Peak, sitting at 8,751 feet.</li>
+    <li>There are 16 different species of bats found in Guadalupe National Park.</li>
+    <li>The hottest recorded temperature in Guadalupe National Park was 105 degrees Fahrenheit, in 1994.</li>
+    <li>When Guadalupe National Park opened in 1971 there were just over 27,000 visitors. In 2012 there were 159,360 visitors to the park.</li>
+</ul>
+
+
+<script>
+    $(document).ready(function() {
+
+        // $(".invisible").css('visibility',"hidden")
+        $('dd').hide();
+
+        $('dt').click(function () {
+            $("#invisible").next().toggle()
+        });
+        $("h1").css({
+            "background-color": "pink",
+            "font-size":"30px",
+            "color":"#7C5FA9",
+            "text-align":"center"
+
+        });
+        $(".cat-faq").css({
+            "background-color": "orange",
+        });
+
+
+        $(".cat-faq").click(function () {
+            $(".invisible").toggle()
+        })
+
+        $(".cat-faq").click(function () {
+            $("dd").each(function (line) {
+                if(line%2==0){
+                    $(this).css("color","blue")
+                }
+            })
+
+        })
+
+        $("#delay").hide();
+        $('#delay').delay(5000).fadeIn()
+
+        $("#btn").click(function () {
+            // $('.park-data').each(function () {
+                    $('.park-data').children().last().css("background-color","yellow")
+                // })
+
+        })
+        $("#btn").click(function () {
+            $("li:first-child").css("color","red")
+        })
+
+        $(".park-list").click(function () {
+            $("li").css("font-weight",'bold')
+        })
+
+
+        // $(".park-data").each(function (){
+        //     $(this).children().last().css("background-color","yellow")
+        //
+        // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
