@@ -21,6 +21,12 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
+        #location{
+            text-align: center;
+            font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
 
     </style>
 </head>
@@ -28,6 +34,7 @@
 
 
 <h1>Weather Application</h1>
+<div id="location"></div>
 
 <div  class="container">
     <div class="row"id="date">
@@ -70,20 +77,37 @@
         center: [-98.4916, 29.4252]
     });
 
-    map.addControl(new MapboxGeocoder({
+    var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl
-    }));
+    })
+
+    var locationName = "San Antonio";
+    $("#location").html(locationName);
+    geocoder.on('result', function(ev) {
+        //map.getSource('single-point').setData(ev.result.geometry);
+        console.log(ev);
+
+        // console.log(ev.result.center[1], ev.result.center[0]);
+        locationName= ev.result.place_name;
+        $("#location").html(locationName);
+        getWeather(ev.result.center[1], ev.result.center[0])
+    });
+
+    map.addControl(geocoder);
+    var marker;
 
     map.on("click",function(e){
         JSON.stringify(e.point)+"<br/>"+ JSON.stringify(e.lnglat);
         console.log(e.lngLat.lat)
         console.log(e.lngLat.lng)
         getWeather(e.lngLat.lat, e.lngLat.lng)
-        var marker = new mapboxgl.Marker()
-            .setLngLat([e.lngLat.lng, e.lngLat.lat])
 
-            .add(map);
+        if(marker != undefined) marker.remove()
+
+        marker = new mapboxgl.Marker()
+            .setLngLat([e.lngLat.lng, e.lngLat.lat])
+            .addTo(map);
 
 
     });

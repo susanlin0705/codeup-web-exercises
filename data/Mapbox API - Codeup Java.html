@@ -1,0 +1,4128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://java.codeup.com/javascript-i/mapbox-api/ -->
+<html lang="en" class="js json svg checked target dataset details fetch supports csstransforms3d no-ios" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="https://java.codeup.com/img/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>Mapbox API - Codeup Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="./Mapbox API - Codeup Java_files/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="./Mapbox API - Codeup Java_files/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="./Mapbox API - Codeup Java_files/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="">
+      
+        <link rel="stylesheet" href="./Mapbox API - Codeup Java_files/css">
+        <style>body,input{font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"IBM Plex Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="./Mapbox API - Codeup Java_files/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="deep-purple" data-md-state="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="https://java.codeup.com/javascript-i/mapbox-api/#mapbox-maps-api" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header" data-md-state="shadow">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://java.codeup.com/" title="Codeup Java" class="md-header-nav__button md-logo">
+          
+            <img src="./Mapbox API - Codeup Java_files/logo.png" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title" data-md-state="active">
+          
+            
+              <span class="md-header-nav__topic" style="width: 873px;">
+                Codeup Java
+              </span>
+              <span class="md-header-nav__topic" style="width: 873px;">
+                Mapbox API
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs" data-md-state="hidden">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/" title="Introduction" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/html-css/" title="HTML and CSS" class="md-tabs__link">
+          HTML and CSS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/javascript-i/" title="JavaScript I" class="md-tabs__link md-tabs__link--active">
+          JavaScript I
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/jquery/" title="jQuery" class="md-tabs__link">
+          jQuery
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/javascript-ii/" title="JavaScript II" class="md-tabs__link">
+          JavaScript II
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/java-i/" title="Java I" class="md-tabs__link">
+          Java I
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/java-ii/" title="Java II" class="md-tabs__link">
+          Java II
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/mysql/" title="MySQL" class="md-tabs__link">
+          MySQL
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/java-iii/" title="Java III" class="md-tabs__link">
+          Java III
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/spring/" title="Spring" class="md-tabs__link">
+          Spring
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://java.codeup.com/appendix/" title="Appendix" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" style="height: 562px;" data-md-state="lock">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="./Mapbox API - Codeup Java_files/logo.png" width="48" height="48">
+      
+    </span>
+    Codeup Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/toc/" title="Table of Contents" class="md-nav__link">
+      Table of Contents
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      HTML and CSS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-2">
+        HTML and CSS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/introduction/" title="Introduction to HTML" class="md-nav__link">
+      Introduction to HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/elements/" title="HTML Elements" class="md-nav__link">
+      HTML Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/forms/" title="HTML Forms" class="md-nav__link">
+      HTML Forms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      CSS I
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-2-5">
+        CSS I
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/introduction/" title="Introduction to CSS" class="md-nav__link">
+      Introduction to CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/selectors-and-properties/" title="Selectors and Properties" class="md-nav__link">
+      Selectors and Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/box-model/" title="Box Model" class="md-nav__link">
+      Box Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/positioning/" title="Positioning" class="md-nav__link">
+      Positioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      CSS II
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-2-6">
+        CSS II
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-ii/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-ii/media-queries/" title="Media Queries" class="md-nav__link">
+      Media Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-ii/grids/" title="Grids" class="md-nav__link">
+      Grids
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-ii/bootstrap-introduction/" title="Bootstrap Introduction" class="md-nav__link">
+      Bootstrap Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-ii/bootstrap-grid-system/" title="Bootstrap Grid System" class="md-nav__link">
+      Bootstrap Grid System
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked="">
+    
+    <label class="md-nav__link" for="nav-3">
+      JavaScript I
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: block; overflow: visible;">
+      <label class="md-nav__title" for="nav-3">
+        JavaScript I
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-3-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/introduction/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/introduction/primitive-types/" title="Primitive Types" class="md-nav__link">
+      Primitive Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/introduction/operators/" title="Operators" class="md-nav__link">
+      Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/introduction/variables/" title="Variables" class="md-nav__link">
+      Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/introduction/working-with-data-types-operators-and-variables/" title="Working With Data Types, Operators, and Variables" class="md-nav__link">
+      Working With Data Types, Operators, and Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/javascript-with-html/" title="JavaScript with HTML" class="md-nav__link">
+      JavaScript with HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/conditionals/" title="Conditionals" class="md-nav__link">
+      Conditionals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/testing-user-functions/" title="Intro to Unit Testing" class="md-nav__link">
+      Intro to Unit Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/loops/" title="Loops" class="md-nav__link">
+      Loops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8">
+    
+    <label class="md-nav__link" for="nav-3-8">
+      Arrays
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-3-8">
+        Arrays
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/arrays/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/arrays/manipulating/" title="Manipulating" class="md-nav__link">
+      Manipulating
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
+    
+    <label class="md-nav__link" for="nav-3-9">
+      Objects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-3-9">
+        Objects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/objects/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/objects/math/" title="Math" class="md-nav__link">
+      Math
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-10" type="checkbox" id="nav-3-10">
+    
+    <label class="md-nav__link" for="nav-3-10">
+      BOM and DOM
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-3-10">
+        BOM and DOM
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/bom-and-dom/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/bom-and-dom/bom/" title="Browser Object Model" class="md-nav__link">
+      Browser Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/bom-and-dom/dom/" title="Document Object Model" class="md-nav__link">
+      Document Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/bom-and-dom/dom-events/" title="DOM Events" class="md-nav__link">
+      DOM Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Mapbox API
+      </label>
+    
+    <a href="https://java.codeup.com/javascript-i/mapbox-api/" title="Mapbox API" class="md-nav__link md-nav__link--active">
+      Mapbox API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#mapbox-gl-js-api" title="Mapbox GL JS API" class="md-nav__link">
+    Mapbox GL JS API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#generating-an-api-key" title="Generating an API Key" class="md-nav__link">
+    Generating an API Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#generating-a-map" title="Generating a Map" class="md-nav__link">
+    Generating a Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#customizing-the-map-setting-the-style-center-zoom" title="Customizing the Map (setting the Style, Center, Zoom)" class="md-nav__link">
+    Customizing the Map (setting the Style, Center, Zoom)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#markers" title="Markers" class="md-nav__link">
+    Markers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#popups" title="Popups" class="md-nav__link">
+    Popups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#geocoder-api" title="Geocoder API" class="md-nav__link">
+    Geocoder API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#geocoding" title="Geocoding" class="md-nav__link">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#reverse-geocoding" title="Reverse Geocoding" class="md-nav__link">
+    Reverse Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#bonus-example-geocoding-to-place-a-marker" title="Bonus Example: Geocoding to Place a Marker" class="md-nav__link">
+    Bonus Example: Geocoding to Place a Marker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#exercises" title="Exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#bonuses-roughly-in-ascending-order-of-challenge" title="Bonuses (roughly in ascending order of challenge)" class="md-nav__link">
+    Bonuses (roughly in ascending order of challenge)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/coffee-project/" title="Coffee Project" class="md-nav__link">
+      Coffee Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      jQuery
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-4">
+        jQuery
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/selectors/" title="Selectors" class="md-nav__link">
+      Selectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Events
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-4-4">
+        Events
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/events/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/events/mouse-events/" title="Mouse Events" class="md-nav__link">
+      Mouse Events
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/events/keyboard-events/" title="Keyboard Events" class="md-nav__link">
+      Keyboard Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Essential Methods
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-4-5">
+        Essential Methods
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/essential-methods/attributes-and-css/" title="Attributes And CSS" class="md-nav__link">
+      Attributes And CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/essential-methods/traversing/" title="Traversing" class="md-nav__link">
+      Traversing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/effects/" title="Effects" class="md-nav__link">
+      Effects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Ajax Requests
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-4-7">
+        Ajax Requests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/ajax/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/ajax/requests-and-responses/" title="Requests and Responses" class="md-nav__link">
+      Requests and Responses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/ajax/weather-map/" title="Weather Map Project" class="md-nav__link">
+      Weather Map Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/personal-site/" title="Personal Site" class="md-nav__link">
+      Personal Site
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      JavaScript II
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-5">
+        JavaScript II
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/es6/" title="es6" class="md-nav__link">
+      es6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/map-filter-reduce/" title="Map, Filter, and Reduce" class="md-nav__link">
+      Map, Filter, and Reduce
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/promises/" title="Promises" class="md-nav__link">
+      Promises
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/npm/" title="npm" class="md-nav__link">
+      npm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-ii/ajax-api/" title="Ajax and API requests" class="md-nav__link">
+      Ajax and API requests
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Java I
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-6">
+        Java I
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/introduction-to-java/" title="Introduction To Java" class="md-nav__link">
+      Introduction To Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/syntax-types-and-variables/" title="Syntax, Types, and Variables" class="md-nav__link">
+      Syntax, Types, and Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/console-io/" title="Console IO" class="md-nav__link">
+      Console IO
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/control-statements-and-loops/" title="Control Statements and Loops" class="md-nav__link">
+      Control Statements and Loops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/strings/" title="Strings" class="md-nav__link">
+      Strings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-i/methods/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Java II
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-7">
+        Java II
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/object-oriented-programming/" title="Object Oriented Programming" class="md-nav__link">
+      Object Oriented Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/arrays/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/inheritance-and-polymorphism/" title="Inheritance and Polymorphism" class="md-nav__link">
+      Inheritance and Polymorphism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/interfaces-and-abstract-classes/" title="Interfaces and Abstract Classes" class="md-nav__link">
+      Interfaces and Abstract Classes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/annotations/" title="Annotations" class="md-nav__link">
+      Annotations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/exceptions-and-error-handling/" title="Exceptions and Error Handling" class="md-nav__link">
+      Exceptions and Error Handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-ii/file-io/" title="File I/O" class="md-nav__link">
+      File I/O
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-8">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/introduction/" title="Introduction to MySQL" class="md-nav__link">
+      Introduction to MySQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/users/" title="Users" class="md-nav__link">
+      Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/databases/" title="Databases" class="md-nav__link">
+      Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/tables/" title="Tables" class="md-nav__link">
+      Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/basic-statements/" title="Basic Statements" class="md-nav__link">
+      Basic Statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/sample-database/" title="Setting Up Sample DB" class="md-nav__link">
+      Setting Up Sample DB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/intellij/" title="IntelliJ Setup" class="md-nav__link">
+      IntelliJ Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-9" type="checkbox" id="nav-8-9">
+    
+    <label class="md-nav__link" for="nav-8-9">
+      MySQL Clauses
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-8-9">
+        MySQL Clauses
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/clauses/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/clauses/where/" title="Where" class="md-nav__link">
+      Where
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/clauses/order-by/" title="Order By" class="md-nav__link">
+      Order By
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/clauses/limit/" title="Limit" class="md-nav__link">
+      Limit
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/group-by/" title="Group By" class="md-nav__link">
+      Group By
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/aliases/" title="Aliases" class="md-nav__link">
+      Aliases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-13" type="checkbox" id="nav-8-13">
+    
+    <label class="md-nav__link" for="nav-8-13">
+      Relationships
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-8-13">
+        Relationships
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/relationships/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/relationships/indexes/" title="Indexes" class="md-nav__link">
+      Indexes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/relationships/joins/" title="Joins" class="md-nav__link">
+      Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/relationships/sub-queries/" title="Sub-Queries" class="md-nav__link">
+      Sub-Queries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/database-design/" title="Database Design" class="md-nav__link">
+      Database Design
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Java III
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-9">
+        Java III
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/deployment-and-dependencies/" title="Deployment and Dependencies" class="md-nav__link">
+      Deployment and Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/servlets/" title="Servlets" class="md-nav__link">
+      Servlets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/jsp-and-jstl/" title="JSP and JSTL" class="md-nav__link">
+      JSP and JSTL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/mvc/" title="MVC" class="md-nav__link">
+      MVC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/sessions-and-cookies/" title="Sessions and Cookies" class="md-nav__link">
+      Sessions and Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/jdbc/" title="JDBC" class="md-nav__link">
+      JDBC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/user-input/" title="User Input" class="md-nav__link">
+      User Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/passwords/" title="Passwords" class="md-nav__link">
+      Passwords
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/java-iii/finish-the-adlister/" title="Finish The Adlister" class="md-nav__link">
+      Finish The Adlister
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Spring
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-10">
+        Spring
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3">
+    
+    <label class="md-nav__link" for="nav-10-3">
+      Fundamentals
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-10-3">
+        Fundamentals
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/controllers/" title="Controllers" class="md-nav__link">
+      Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/views/" title="Views" class="md-nav__link">
+      Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/repositories/" title="Repositories and JPA" class="md-nav__link">
+      Repositories and JPA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/relationships/" title="Relationships" class="md-nav__link">
+      Relationships
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/form-model-binding/" title="Form Model Binding" class="md-nav__link">
+      Form Model Binding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-7" type="checkbox" id="nav-10-3-7">
+    
+    <label class="md-nav__link" for="nav-10-3-7">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-10-3-7">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/security/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/fundamentals/security/authentication/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+    
+    <label class="md-nav__link" for="nav-10-4">
+      Extra Features
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-10-4">
+        Extra Features
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/extra-features/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/extra-features/form-validation/" title="Validation" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/extra-features/error-pages/" title="Custom Error Pages" class="md-nav__link">
+      Custom Error Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/extra-features/json-response/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/spring/extra-features/file-upload/" title="File Upload" class="md-nav__link">
+      File Upload
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/capstone-workbook/" title="Capstone Workbook" class="md-nav__link">
+      Capstone Workbook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/capstone-workbook/sw-project-planning/" title="Software Project Planning" class="md-nav__link">
+      Software Project Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-4">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/intellij-intro/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/intellij/" title="IntelliJ Walkthrough" class="md-nav__link">
+      IntelliJ Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/cli/" title="CLI Walkthrough" class="md-nav__link">
+      CLI Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/branching/" title="Branching" class="md-nav__link">
+      Branching
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/working-in-teams/" title="Teamwork" class="md-nav__link">
+      Teamwork
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/git/merge-conflict-demo/" title="Merge Conflicts" class="md-nav__link">
+      Merge Conflicts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
+    
+    <label class="md-nav__link" for="nav-11-5">
+      Code Standards
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-5">
+        Code Standards
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/code-standards/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/code-standards/html-css/" title="HTML and CSS" class="md-nav__link">
+      HTML and CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/code-standards/javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/code-standards/mysql/" title="MySQL" class="md-nav__link">
+      MySQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/code-standards/java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-7" type="checkbox" id="nav-11-7">
+    
+    <label class="md-nav__link" for="nav-11-7">
+      Extra Challenges
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-7">
+        Extra Challenges
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/basic-challenges/" title="General Coding Challenges" class="md-nav__link">
+      General Coding Challenges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/css-practice/" title="CSS Challenges" class="md-nav__link">
+      CSS Challenges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/bom-and-dom/calculator/" title="JavaScript Calculator" class="md-nav__link">
+      JavaScript Calculator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/whack-a-mole/create-game/" title="Whack a Mole Game" class="md-nav__link">
+      Whack a Mole Game
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/website-status-page/" title="Website Status Page" class="md-nav__link">
+      Website Status Page
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/memory-game/" title="Memory Game" class="md-nav__link">
+      Memory Game
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/jquery/simple-simon/" title="Simple Simon Game" class="md-nav__link">
+      Simple Simon Game
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/locations/" title="Incidents Map" class="md-nav__link">
+      Incidents Map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/trains/" title="Travel Distance Calculation" class="md-nav__link">
+      Travel Distance Calculation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/sales-tax/" title="Sales Tax" class="md-nav__link">
+      Sales Tax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/mars-rover/" title="Mars Rover" class="md-nav__link">
+      Mars Rover
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/pdf-parser/" title="PDF Parser" class="md-nav__link">
+      PDF Parser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/beef-up-your-blog/" title="Beef Up Your Blog" class="md-nav__link">
+      Beef Up Your Blog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/extra-challenges/facebook-clone/" title="Facebook Clone" class="md-nav__link">
+      Facebook Clone
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-8" type="checkbox" id="nav-11-8">
+    
+    <label class="md-nav__link" for="nav-11-8">
+      Command Line
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-8">
+        Command Line
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/01-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/02-listing-files/" title="Listing Files" class="md-nav__link">
+      Listing Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/03-file-paths/" title="File Paths" class="md-nav__link">
+      File Paths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/04-navigating-the-filesystem/" title="Navigating the File System" class="md-nav__link">
+      Navigating the File System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/05-creating-files-and-directories/" title="Creating Files and Directories" class="md-nav__link">
+      Creating Files and Directories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/prework/cli/06-moving-files/" title="Moving Files" class="md-nav__link">
+      Moving Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9" type="checkbox" id="nav-11-9">
+    
+    <label class="md-nav__link" for="nav-11-9">
+      Further Reading
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9">
+        Further Reading
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-1" type="checkbox" id="nav-11-9-1">
+    
+    <label class="md-nav__link" for="nav-11-9-1">
+      HTML/CSS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-1">
+        HTML/CSS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/css-resets/" title="CSS Reset" class="md-nav__link">
+      CSS Reset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-1-2" type="checkbox" id="nav-11-9-1-2">
+    
+    <label class="md-nav__link" for="nav-11-9-1-2">
+      Flexbox
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-1-2">
+        Flexbox
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/flexbox/flexbox-fundamentals/" title="Flexbox Fundamentals" class="md-nav__link">
+      Flexbox Fundamentals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/html-css/css-i/flexbox/flexbox-in-practice/" title="Flexbox In Practice" class="md-nav__link">
+      Flexbox In Practice
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-2" type="checkbox" id="nav-11-9-2">
+    
+    <label class="md-nav__link" for="nav-11-9-2">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-2">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/javascript/hoisting/" title="Hoisting in Javascript" class="md-nav__link">
+      Hoisting in Javascript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/javascript/array-splice/" title="Array Splice" class="md-nav__link">
+      Array Splice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/javascript/this/" title="The this keyword" class="md-nav__link">
+      The this keyword
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-2-4" type="checkbox" id="nav-11-9-2-4">
+    
+    <label class="md-nav__link" for="nav-11-9-2-4">
+      Angular
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-2-4">
+        Angular
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/angular/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/angular/templating/" title="Expressions and Directives" class="md-nav__link">
+      Expressions and Directives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/angular/models/" title="Models" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/angular/controllers/" title="Controllers" class="md-nav__link">
+      Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/angular/dependencies/" title="Dependencies and Services" class="md-nav__link">
+      Dependencies and Services
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-3" type="checkbox" id="nav-11-9-3">
+    
+    <label class="md-nav__link" for="nav-11-9-3">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-3">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/mysql/extra-exercises/" title="Extra Exercises" class="md-nav__link">
+      Extra Exercises
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-4" type="checkbox" id="nav-11-9-4">
+    
+    <label class="md-nav__link" for="nav-11-9-4">
+      Java
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-4">
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/java/intellij-tomcat-configuration/" title="IntelliJ Servlet Application Configuration" class="md-nav__link">
+      IntelliJ Servlet Application Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-9-5" type="checkbox" id="nav-11-9-5">
+    
+    <label class="md-nav__link" for="nav-11-9-5">
+      Spring
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-9-5">
+        Spring
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/spring/pagination/" title="Pagination" class="md-nav__link">
+      Pagination
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/spring/authorization/" title="Authorization" class="md-nav__link">
+      Authorization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/spring/security-use-cases/" title="Security Use Cases" class="md-nav__link">
+      Security Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/spring/seeder/" title="Create A Database Seeder" class="md-nav__link">
+      Create A Database Seeder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/further-reading/spring/devtools-configuration/" title="Devtools" class="md-nav__link">
+      Devtools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-10" type="checkbox" id="nav-11-10">
+    
+    <label class="md-nav__link" for="nav-11-10">
+      Web Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-10">
+        Web Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-10-3" type="checkbox" id="nav-11-10-3">
+    
+    <label class="md-nav__link" for="nav-11-10-3">
+      UI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-10-3">
+        UI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/ui/typography/" title="Typography" class="md-nav__link">
+      Typography
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/ui/color/" title="Color Theory" class="md-nav__link">
+      Color Theory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/ui/visuals/" title="Visual Communication" class="md-nav__link">
+      Visual Communication
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-10-4" type="checkbox" id="nav-11-10-4">
+    
+    <label class="md-nav__link" for="nav-11-10-4">
+      UX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3" style="display: none; overflow: hidden;">
+      <label class="md-nav__title" for="nav-11-10-4">
+        UX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix="">
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/ux/purpose/" title="Purpose" class="md-nav__link">
+      Purpose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/web-design/ux/layout/" title="Layout" class="md-nav__link">
+      Layout
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/appendix/slides/" title="Slideshows" class="md-nav__link">
+      Slideshows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://java.codeup.com/javascript-i/google-maps-api/" title="Google Maps API" class="md-nav__link">
+      Google Maps API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" style="height: 562px;" data-md-state="lock">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#mapbox-gl-js-api" title="Mapbox GL JS API" class="md-nav__link" data-md-state="blur">
+    Mapbox GL JS API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#generating-an-api-key" title="Generating an API Key" class="md-nav__link" data-md-state="blur">
+    Generating an API Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#generating-a-map" title="Generating a Map" class="md-nav__link" data-md-state="blur">
+    Generating a Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#customizing-the-map-setting-the-style-center-zoom" title="Customizing the Map (setting the Style, Center, Zoom)" class="md-nav__link" data-md-state="blur">
+    Customizing the Map (setting the Style, Center, Zoom)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#markers" title="Markers" class="md-nav__link" data-md-state="">
+    Markers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#popups" title="Popups" class="md-nav__link" data-md-state="">
+    Popups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#geocoder-api" title="Geocoder API" class="md-nav__link" data-md-state="">
+    Geocoder API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#geocoding" title="Geocoding" class="md-nav__link" data-md-state="">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#reverse-geocoding" title="Reverse Geocoding" class="md-nav__link" data-md-state="">
+    Reverse Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#bonus-example-geocoding-to-place-a-marker" title="Bonus Example: Geocoding to Place a Marker" class="md-nav__link" data-md-state="">
+    Bonus Example: Geocoding to Place a Marker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#exercises" title="Exercises" class="md-nav__link" data-md-state="">
+    Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://java.codeup.com/javascript-i/mapbox-api/#bonuses-roughly-in-ascending-order-of-challenge" title="Bonuses (roughly in ascending order of challenge)" class="md-nav__link">
+    Bonuses (roughly in ascending order of challenge)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mapbox-maps-api">Mapbox Maps API</h1>
+<p>Adding maps to our applications can give users a lot of information in a visual format. Maps can display locations, directions, search results, and a wide variety of data in a way that is easily consumed by our users.</p>
+<p>For this lesson, we're going to be working with <a href="https://www.mapbox.com/">Mapbox</a>. Thanks to Mapbox, we can use their <em>application program interface</em> (API) to dynamically create and manipulate real world maps. Mapbox provides many APIs that offer tools for everything from navigation to autonomous vehicles and augmented reality.</p>
+<h3 id="mapbox-gl-js-api">Mapbox GL JS API</h3>
+<p>Mapbox GL JS (not to be confused with the deprecated Mapbox JS) is an API to create interactive maps on a web page using WebGL. Many features are available through this API including user interaction controls, animations, custom layers, street views, overlays and much more! To better explore these features, we can refer to both the <a href="https://docs.mapbox.com/mapbox-gl-js/api/">API documentation</a> and the <a href="https://docs.mapbox.com/mapbox-gl-js/examples/">many examples</a> provided by Mapbox.</p>
+<p>We will be covering several areas of Mapbox APIs in this lesson. Many other web services offer APIs with similar ease of use. Integrating existing technologies into our applications can provide users with a very rich experience.</p>
+<h3 id="generating-an-api-key">Generating an API Key</h3>
+<p>To interact with Mapbox APIs, we will need to <a href="https://account.mapbox.com/auth/signup/">sign up</a> for an account, log in, then generate an <a href="https://account.mapbox.com/">access token</a> for our application to use. A new token should be generated for each application using Mapbox. The documentation provides more information on <a href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/">access tokens</a>. A token will allow us to make up to 50,000 free requests per month. For more information, consult the Mapbox <a href="https://www.mapbox.com/pricing/">pricing rates</a>. If an application is launched to the public using the API, we might need to purchase a paid plan that allows more requests.</p>
+<h3 id="generating-a-map">Generating a Map</h3>
+<p>To quickly get a Mapbox map working, include the CDN links and boilerplate code from the <a href="https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart">quickstart</a> in your HTML file.</p>
+<h3 id="customizing-the-map-setting-the-style-center-zoom">Customizing the Map (setting the Style, Center, Zoom)</h3>
+<p>When creating a new map, a map style must be specified. Several <a href="https://docs.mapbox.com/mapbox-gl-js/api/#map">predefined map styles</a> are available. The map center and zoom level have a default value but can be specified. A map center can be set by passing in the latitude and longitude coordinates of a location as an array <code>[LONGITUDE_VALUE, LATITUDE_VALUE]</code>. Zoom levels range from 0 up to 24, with 0 being a global view and 24 being the most detailed at street level (the max zoom level depends on the location). The following example will draw a map of San Antonio:</p>
+<div class="codehilite" id="__code_0"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_0 pre, #__code_0 code"><span class="md-clipboard__message"></span></button><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>First Mapbox Map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Mapbox CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css'</span> <span class="na">rel</span><span class="o">=</span><span class="s">'stylesheet'</span> <span class="p">/&gt;</span>
+    <span class="c">&lt;!-- Custom CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">#</span><span class="nn">map</span> <span class="p">{</span>
+            <span class="c">/* the width and height may be set to any size */</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My First Mapbox Map!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- The HTML element that serves as the Mapbox container --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">'map'</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Custom JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">YOUR_API_TOKEN_HERE</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+        <span class="nx">container</span><span class="o">:</span> <span class="s1">'map'</span><span class="p">,</span>
+        <span class="nx">style</span><span class="o">:</span> <span class="s1">'mapbox://styles/mapbox/streets-v9'</span><span class="p">,</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">98.4916</span><span class="p">,</span> <span class="mf">29.4252</span><span class="p">]</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>After the map variable holding the Mapbox map object has been initialized, the map view may be changed using the various methods the Mapbox GL JS API provides. For example, to change the zoom level, including <code>map.setZoom(4)</code> after the map variable is created would change the zoom level to show most of the US. You can find a comprehensive list of these methods and properties starting <a href="https://docs.mapbox.com/mapbox-gl-js/api/#map#scrollzoom">here</a>. Try changing the map center, zoom, and predefined style.</p>
+<h3 id="markers">Markers</h3>
+<p>Markers, sometimes referred to as pins, are used to show specific locations on a map. We can use these to identify locations for our users. Documentation on markers can be found <a href="https://docs.mapbox.com/mapbox-gl-js/api/#marker">here</a>. To place a marker on a map, a marker object must be created. The methods <code>.setLngLat()</code> and <code>.addTo()</code> must be called on this marker object to set the position of the marker and add it to the map. The former method takes in the longitude and latitude coordinates for the marker while the latter takes in whatever variable refers to the map object. The following code included in the above example will place a marker on The Alamo:</p>
+<div class="codehilite" id="__code_1"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_1 pre, #__code_1 code"><span class="md-clipboard__message"></span></button><pre><span></span>var marker = new mapboxgl.Marker()
+.setLngLat([-98.4916, 29.4260])
+.addTo(map);
+</pre></div>
+
+<h4 id="popups">Popups</h4>
+<p>Popups (info windows for Google Maps) are the info boxes that appear on a map and may describe a given location. See the documentation <a href="https://docs.mapbox.com/mapbox-gl-js/api/#popup">here</a>. To add a simple popup to a map, a new popup object must be created and methods should be called, as with a marker, to set its position and place it on the map. Additionally, the methods <code>.setHTML()</code> or <code>.setText()</code> can be added to control the content inside an info window. The following example would add a popup over Codeup:</p>
+<div class="codehilite" id="__code_2"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_2 pre, #__code_2 code"><span class="md-clipboard__message"></span></button><pre><span></span>var popup = new mapboxgl.Popup()
+.setLngLat([-98.489615, 29.426827])
+.setHTML("<span class="nt">&lt;p&gt;</span>Codeup Rocks!<span class="nt">&lt;/p&gt;</span>")
+.addTo(map)
+</pre></div>
+
+<p>More often, popups are associated with a marker. If this is the case, there is no need to set the position for the popup. Comment out the popup for Codeup. To add a popup to The Alamo marker from above, add the following to your code:</p>
+<div class="codehilite" id="__code_3"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_3 pre, #__code_3 code"><span class="md-clipboard__message"></span></button><pre><span></span>var alamoPopup = new mapboxgl.Popup()
+.setHTML("<span class="nt">&lt;p&gt;</span>Remember The Alamo!<span class="nt">&lt;/p&gt;</span>")
+.addTo(map)
+
+marker.setPopup(alamoPopup)
+</pre></div>
+
+<p>Now the popup info window is toggleable by clicking on the marker it is attached to.</p>
+<h3 id="geocoder-api">Geocoder API</h3>
+<h4 id="geocoding">Geocoding</h4>
+<p>Mapbox provides a separate API for making geocode requests (see the documentation <a href="https://docs.mapbox.com/api/search/#geocoding">here</a>). Geocoding is the process of finding the coordinates (latitude and longitude) of a specific physical address. For example, a call to the Geocoder API for Codeup's address, "600 Navarro St #350, San Antonio, TX 78205," would give us back a longitude and latitude of <code>[-98.489615, 29.426827]</code>.  While Mapbox plugins can be used to add user interfaces that interact with this API, calls to the API can be made directly. You will be provided with methods to make these API calls more streamlined. How these methods are implemented will be covered in more detail later in the curriculum. To use these methods, make sure you create a JavaScript file called <code>mapbox-geocoder-utils.js</code> in your Mapbox projects containing the following JavaScript:</p>
+<div class="codehilite" id="__code_4"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_4 pre, #__code_4 code"><span class="md-clipboard__message"></span></button><pre><span></span><span class="s2">"use strict"</span><span class="p">;</span>
+
+<span class="cm">/***</span>
+<span class="cm"> * geocode is a method to search for coordinates based on a physical address and return</span>
+<span class="cm"> * @param {string} search is the address to search for the geocoded coordinates</span>
+<span class="cm"> * @param {string} token is your API token for MapBox</span>
+<span class="cm"> * @returns {Promise} a promise containing the latitude and longitude as a two element array</span>
+<span class="cm"> *</span>
+<span class="cm"> * EXAMPLE:</span>
+<span class="cm"> *</span>
+<span class="cm"> *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {</span>
+<span class="cm"> *      // do something with results</span>
+<span class="cm"> *  })</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">geocode</span><span class="p">(</span><span class="nx">search</span><span class="p">,</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">'https://api.mapbox.com'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">endPoint</span> <span class="o">=</span> <span class="s1">'/geocoding/v5/mapbox.places/'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="nx">endPoint</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">search</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'.json'</span> <span class="o">+</span> <span class="s2">"?"</span> <span class="o">+</span> <span class="s1">'access_token='</span> <span class="o">+</span> <span class="nx">token</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+        <span class="c1">// to get all the data from the request, comment out the following three lines...</span>
+        <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">center</span><span class="p">;</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+
+
+<span class="cm">/***</span>
+<span class="cm"> * reverseGeocode is a method to search for a physical address based on inputted coordinates</span>
+<span class="cm"> * @param {object} coordinates is an object with properties "lat" and "lng" for latitude and longitude</span>
+<span class="cm"> * @param {string} token is your API token for MapBox</span>
+<span class="cm"> * @returns {Promise} a promise containing the string of the closest matching location to the coordinates provided</span>
+<span class="cm"> *</span>
+<span class="cm"> * EXAMPLE:</span>
+<span class="cm"> *</span>
+<span class="cm"> *  reverseGeocode({lat: 32.77, lng: -96.79}, API_TOKEN_HERE).then(function(results) {</span>
+<span class="cm"> *      // do something with results</span>
+<span class="cm"> *  })</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">reverseGeocode</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">,</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">'https://api.mapbox.com'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">endPoint</span> <span class="o">=</span> <span class="s1">'/geocoding/v5/mapbox.places/'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="nx">endPoint</span> <span class="o">+</span> <span class="nx">coordinates</span><span class="p">.</span><span class="nx">lng</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="nx">coordinates</span><span class="p">.</span><span class="nx">lat</span> <span class="o">+</span> <span class="s1">'.json'</span> <span class="o">+</span> <span class="s2">"?"</span> <span class="o">+</span> <span class="s1">'access_token='</span> <span class="o">+</span> <span class="nx">token</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+        <span class="p">})</span>
+        <span class="c1">// to get all the data from the request, comment out the following three lines...</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">place_name</span><span class="p">;</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Here is example code using the Geocode helper function to log the coordinates of Codeup and then recenter the map to focus on Codeup:</p>
+<div class="codehilite" id="__code_5"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_5 pre, #__code_5 code"><span class="md-clipboard__message"></span></button><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Geocode Examples<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Mapbox CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css'</span> <span class="na">rel</span><span class="o">=</span><span class="s">'stylesheet'</span> <span class="p">/&gt;</span>
+    <span class="c">&lt;!-- Custom CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">#</span><span class="nn">map</span> <span class="p">{</span>
+            <span class="c">/* the width and height may be set to any size */</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My First Mapbox Map!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- The HTML element that serves as the Mapbox container --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">'map'</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox Geocoder Util Methods --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"mapbox-geocoder-utils.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Custom JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">YOUR_TOKEN_HERE</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+        <span class="nx">container</span><span class="o">:</span> <span class="s1">'map'</span><span class="p">,</span>
+        <span class="nx">style</span><span class="o">:</span> <span class="s1">'mapbox://styles/mapbox/streets-v9'</span><span class="p">,</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">98.4916</span><span class="p">,</span> <span class="mf">29.4252</span><span class="p">]</span>
+    <span class="p">});</span>
+
+    <span class="c1">// the  geocode method from mapbox-geocoder-utils.js </span>
+    <span class="nx">geocode</span><span class="p">(</span><span class="s2">"600 Navarro St #350, San Antonio, TX 78205"</span><span class="p">,</span> <span class="nx">YOUR_TOKEN_HERE</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">setZoom</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="p">});</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<h4 id="reverse-geocoding">Reverse Geocoding</h4>
+<p>Reverse geocoding is the process of converting coordinates (latitude and longitude) into a physical address. For example, entering a coordinates object to the reverseGeocode method <code>{lng: -98.4861, lat: 29.4260}</code> would yield the physical address for the Alamo:</p>
+<div class="codehilite" id="__code_6"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_6 pre, #__code_6 code"><span class="md-clipboard__message"></span></button><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Geocode Examples<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Mapbox CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css'</span> <span class="na">rel</span><span class="o">=</span><span class="s">'stylesheet'</span> <span class="p">/&gt;</span>
+    <span class="c">&lt;!-- Custom CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">#</span><span class="nn">map</span> <span class="p">{</span>
+            <span class="c">/* the width and height may be set to any size */</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My First Mapbox Map!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- The HTML element that serves as the Mapbox container --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">'map'</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox Geocoder Util Methods --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"mapbox-geocoder-utils.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Custom JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">YOUR_TOKEN_HERE</span><span class="p">;</span>
+    <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+        <span class="nx">container</span><span class="o">:</span> <span class="s1">'map'</span><span class="p">,</span>
+        <span class="nx">style</span><span class="o">:</span> <span class="s1">'mapbox://styles/mapbox/streets-v9'</span><span class="p">,</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">98.4916</span><span class="p">,</span> <span class="mf">29.4252</span><span class="p">]</span>
+    <span class="p">});</span>
+
+    <span class="c1">// reverse geocode method from mapbox-geocoder-utils.js</span>
+    <span class="nx">reverseGeocode</span><span class="p">({</span><span class="nx">lng</span><span class="o">:</span> <span class="o">-</span><span class="mf">98.4861</span><span class="p">,</span> <span class="nx">lat</span><span class="o">:</span> <span class="mf">29.4260</span><span class="p">},</span> <span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// logs the address for The Alamo</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+    <span class="p">});</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<h4 id="bonus-example-geocoding-to-place-a-marker">Bonus Example: Geocoding to Place a Marker</h4>
+<p>We can combine what we know about creating markers and geocoding addresses. Lets place a marker and popup window on UTSA based on the physical address of the 1604 campus:</p>
+<div class="codehilite" id="__code_7"><button class="md-clipboard" title="Copy to clipboard" data-clipboard-target="#__code_7 pre, #__code_7 code"><span class="md-clipboard__message"></span></button><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Map Marker Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Mapbox CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css'</span> <span class="na">rel</span><span class="o">=</span><span class="s">'stylesheet'</span> <span class="p">/&gt;</span>
+    <span class="c">&lt;!-- Custom CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">#</span><span class="nn">map</span> <span class="p">{</span>
+            <span class="c">/* the width and height may be set to any size */</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My First Mapbox Map!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- The HTML element that serves as the Mapbox container --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">'map'</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Mapbox Geocoder Util Methods --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"mapbox-geocoder-utils.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Custom JS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="kd">var</span> <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">YOUR_ACCESS_TOKEN_HERE</span><span class="p">;</span>
+
+    <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">accessToken</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+        <span class="nx">container</span><span class="o">:</span> <span class="s1">'map'</span><span class="p">,</span>
+        <span class="nx">style</span><span class="o">:</span> <span class="s1">'mapbox://styles/mapbox/streets-v9'</span><span class="p">,</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">98.4916</span><span class="p">,</span> <span class="mf">29.4252</span><span class="p">]</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">alamoInfo</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">address</span><span class="o">:</span> <span class="s2">"The Alamo"</span><span class="p">,</span>
+        <span class="nx">popupHTML</span><span class="o">:</span> <span class="s2">"&lt;p&gt;Remember the Alamo!&lt;/p&gt;"</span>
+    <span class="p">};</span>
+
+    <span class="kd">function</span> <span class="nx">placeMarkerAndPopup</span><span class="p">(</span><span class="nx">info</span><span class="p">,</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">geocode</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">token</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Popup</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">setHTML</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">popupHTML</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">marker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapboxgl</span><span class="p">.</span><span class="nx">Marker</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">setLngLat</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">setPopup</span><span class="p">(</span><span class="nx">popup</span><span class="p">);</span>
+            <span class="nx">popup</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">placeMarkerAndPopup</span><span class="p">(</span><span class="nx">alamoInfo</span><span class="p">,</span> <span class="nx">accessToken</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>In the above example, a custom function, placeMarkerAndPopup, has been added to allow multiple markers to be easily placed. A challenge here is how to keep track of all marker objects once they are created. This is essential if we need to change the markers in some way after they are added. We could push multiple marker objects on to a global array of markers. The limitation of this approach is that it would be populated asynchronously, making it hard to predict how long our code would need to wait before accessing these marker objects. We will learn more about a convenient wrapper for asynchronous JavaScript code later in the curriculum (JavaScript Promises). For now, wrapping any calls to a global array of markers in a setTimout will offer a limited solution to this problem.</p>
+<h3 id="exercises">Exercises</h3>
+<p>Please follow the instructions below. Remember to commit your changes after each step. At the end of the exercise, push your changes to GitHub.</p>
+<ol>
+<li>Generate a Mapbox API Key using the steps from above</li>
+<li>Create a new file named <code>mapbox_maps_api.html</code> and add a map using the next steps.</li>
+<li>Generate a map that shows the city with your favorite restaurant using geocoding.</li>
+<li>Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed programmatically after the initial map is drawn?</li>
+<li>Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.</li>
+<li>Create a popup with the name of the restaurant.</li>
+<li>Make sure the info window does not display until the marker has been clicked on.</li>
+<li>Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a <code>.forEach()</code> loop rather than a for loop.</li>
+</ol>
+<h3 id="bonuses-roughly-in-ascending-order-of-challenge">Bonuses (roughly in ascending order of challenge)</h3>
+<ul>
+<li>Info windows can contain basic HTML, not just plain text. Add some additional information about your restaurant to the popup such as why it is your favorite, dishes you like, images, etc.</li>
+<li>Add a select input that allows the user to change the zoom level to 5, 15, or 20.</li>
+<li>Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.</li>
+<li>Add a button that will hide all markers.</li>
+<li>Using this <a href="https://docs.mapbox.com/mapbox-gl-js/example/animate-marker/">marker animation example</a> as a starting point, animate a marker to bounce up and down. Alter the animation to stop after two seconds. Make the amount of bounce animation scale according to zoom level.</li>
+<li>Replace the generic marker icon with an image that is more appropriate for each restaurant. A tutorial for this can be found <a href="https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/">here</a>.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="https://java.codeup.com/javascript-i/bom-and-dom/dom-events/" title="DOM Events" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                DOM Events
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="https://java.codeup.com/javascript-i/coffee-project/" title="Coffee Project" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Coffee Project
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+</footer>
+      
+    </div>
+    
+      <script src="./Mapbox API - Codeup Java_files/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+        <script src="./Mapbox API - Codeup Java_files/keyboard-navigation.js"></script>
+      
+    
+    
+      
+    
+  
+</body></html>
