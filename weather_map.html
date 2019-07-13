@@ -9,6 +9,12 @@
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 
     <style>
+        body{
+         background-image: url("img/purple-background.jpg");
+            filter: alpha(opacity=50)
+        }
+
+
         #map {
             /* the width and height may be set to any size */
             width: 80%;
@@ -28,6 +34,18 @@
             margin-bottom: 30px;
         }
 
+            .container {
+                margin-bottom: 20px;
+            }
+        .weather-item {
+            text-align: center;
+            background: #654ea3;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+
     </style>
 </head>
 <body>
@@ -37,18 +55,10 @@
 <div id="location"></div>
 
 <div  class="container">
-    <div class="row"id="date">
-
+    <div class="row "id="date">
     </div>
 
 </div>
-
-
-
-
-
-
-
 <!--    <label for="latitude">Latitude</label>-->
 <!--    <input type="text" name="latitude" id="latitude">-->
 <!--    <label for="longitude">Longitude</label>-->
@@ -156,7 +166,7 @@
 
                 console.log(dateObject);
 
-                weather += "<div class='col-4 border border-info rounded mb-3 text-center bg-light'>"
+                weather += "<div class='col-4 weather-item'>"
                 weather +=  "<div class='day bg-info text-white font-weight-bold'>"+dateObject.toDateString() + "</div>" ;
                 weather += "<div class='tempHigh'>Hightest: " +report.temperatureHigh + "</div>" ;
                 weather += "<div class='tempLow'>Lowest: "  + report.temperatureLow + "</div>" ;
