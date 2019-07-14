@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>se4reh</title>
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        #color{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
 </head>
 <body>
     <h1>Se4rah</h1>
@@ -28,6 +33,15 @@
         </select>
     </div>
     <div>
+        <label for="text">Your Skin is</label>
+        <textarea name="text" id="text"></textarea>
+    </div>
+    <div>
+        Your color is
+        <div id="color"></div>
+
+    </div>
+    <div>
         <h2 id="yourColor">Your Color is</h2>
     </div>
 
@@ -47,7 +61,7 @@
                 color:"green"
             },
             {
-                skinType:"sensitive",
+                skinType:"Sensitive",
                 color:"pink"
             },
             ]
@@ -55,22 +69,28 @@
 
         $("#skin").change(function () {
             console.log('change');
-            function skin(type){
-                if(type===0){
+           var type=$( "#skin option:selected" ).text();
+           console.log (type);
+                if(type===skinType[0].skinType){
                     console.log(skinType[0].color);
-                    return $("#yourColor").html("YourSkin Type is "+ skinType[0].skinType+ ' and Your color is  '+skinType[0].color)
-                }else if(type===1){
-                    console.log(skinType[1])
-                    return $("#yourColor").html("YourSkin Type is "+ skinType[1].skinType+ ' and Your color is  '+skinType[1].color)
-                }else if (type===2){
-                    return $("#yourColor").html("YourSkin Type is "+ skinType[2].skinType+ ' and Your color is  '+skinType[2].color)
-                }else if(type===3){
-                    return $("#yourColor").html("YourSkin Type is "+ skinType[3].skinType+ ' and Your color is  '+skinType[3].color)
+                    return $("#text").val("YourSkin Type is "+ skinType[0].skinType+ ' and Your color is  '+skinType[0].color),
+                            $("#color").css("background-color","orange")
+                }else if(type===skinType[1].skinType){
+                    console.log(skinType[1].color);
+                    return $("#text").val("YourSkin Type is "+ skinType[1].skinType+ ' and Your color is  '+skinType[1].color),
+                            $("#color").css("background-color","blue")
+                }else if (type===skinType[2].skinType){
+                    console.log(skinType[2].color);
+                    return $("#text").val("YourSkin Type is "+ skinType[2].skinType+ ' and Your color is  '+skinType[2].color),
+                            $("#color").css("background-color","green")
+                }else if(type===skinType[3].skinType){
+                    console.log(skinType[3].color);
+                    return $("#text").val("YourSkin Type is "+ skinType[3].skinType+ ' and Your color is  '+skinType[3].color),
+                            $("#color").css("background-color","pink")
                 }else {
                     return "Sorry Can't find it"
                 }
-            }
-            skin()
+
 
         })
 
