@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>se4reh</title>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Se4rah</h1>
+    <div>
+        <h2>Waht are you looking for today?</h2>
+        <select id="select">
+            <option value="foundation" id="foundation">Foundation</option>
+            <option value="eyeshadow" id="eyeshadow" >Eyeshadow</option>
+            <option value="eyeliner" id="eyeliner">Eyeliner</option>
+            <option value="lips" id="lips">Lips</option>
+        </select>
+    </div>
+    <div id="chooseSkinTone">
+        <h2>What's your skin type?</h2>
+        <select id="skin">
+            <option class="skinName" id="I don't know">I don't know</option>
+            <option class="skinName" id="dry">Dry</option>
+            <option class="skinName" id="Normal">Normal</option>
+            <option class="skinName" id="oil">Oily</option>
+            <option class="skinName" id="sensitive">Sensitive</option>
+        </select>
+    </div>
+    <div>
+        <h2 id="yourColor">Your Color is</h2>
+    </div>
+
+
+    <script>
+        var skinType=[
+            {
+                skinType:"Dry",
+                color:"orange"
+            },
+            {
+                skinType:"Normal",
+                color:"blue"
+            },
+            {
+                skinType:"Oily",
+                color:"green"
+            },
+            {
+                skinType:"sensitive",
+                color:"pink"
+            },
+            ]
+
+
+        $("#skin").change(function () {
+            console.log('change');
+            function skin(type){
+                if(type===0){
+                    console.log(skinType[0].color);
+                    return $("#yourColor").html("YourSkin Type is "+ skinType[0].skinType+ ' and Your color is  '+skinType[0].color)
+                }else if(type===1){
+                    console.log(skinType[1])
+                    return $("#yourColor").html("YourSkin Type is "+ skinType[1].skinType+ ' and Your color is  '+skinType[1].color)
+                }else if (type===2){
+                    return $("#yourColor").html("YourSkin Type is "+ skinType[2].skinType+ ' and Your color is  '+skinType[2].color)
+                }else if(type===3){
+                    return $("#yourColor").html("YourSkin Type is "+ skinType[3].skinType+ ' and Your color is  '+skinType[3].color)
+                }else {
+                    return "Sorry Can't find it"
+                }
+            }
+            skin()
+
+        })
+
+          var yourSkin="" ;
+          skinType.forEach(function (type) {
+              console.log("YourSkin Type is "+ type.skinType+ ' and Your color is  '+type.color)
+              yourSkin+="<div> Your Skin Type is "+ type.skinType + " and your color is "+ type.color+"</div>"
+          })
+          $("#yourColor").html(yourSkin)
+
+    </script>
+</body>
+</html>
