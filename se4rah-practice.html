@@ -44,6 +44,18 @@
     <div>
         <h2 id="yourColor">Your Color is</h2>
     </div>
+    <div>
+        <h2 id="eye">What eyeliner brand do you want to try? </h2>
+        <button id="btn">Click</button>
+        <div id="show"></div>
+        <ul id="brand">
+            <li class="liner1">Pat</li>
+            <li class="liner2">Stila</li>
+            <li class="liner3">UD</li>
+            <li class="liner4">Nars</li>
+            <li class="liner5">Marc</li>
+        </ul>
+    </div>
 
 
     <script>
@@ -65,6 +77,37 @@
                 color:"pink"
             },
             ]
+        var  eyeliners=[
+            {
+                brand:"Pat",
+                finish:"matte",
+                color:"black"
+            },
+            {
+                brand:"Stila",
+                finish:"matte",
+                color:"yellow"
+            },
+            {
+                brand:"UD",
+                finish:"shimmer",
+                color:"silver,black"
+            },
+            {
+                brand:"Nars",
+                finish:"satin",
+                color: "brown"
+            },
+            {
+                brand:"Marc",
+                finish:"glitter",
+                color:"purple"
+            }
+        ]
+
+
+
+
 
 
         $("#skin").change(function () {
@@ -92,14 +135,39 @@
                 }
 
 
+        });
+        var yourSkin="" ;
+        skinType.forEach(function (type) {
+            console.log("YourSkin Type is "+ type.skinType+ ' and Your color is  '+type.color)
+            yourSkin+="<div> Your Skin Type is "+ type.skinType + " and your color is "+ type.color+"</div>"
         })
+        $("#yourColor").html(yourSkin);
 
-          var yourSkin="" ;
-          skinType.forEach(function (type) {
-              console.log("YourSkin Type is "+ type.skinType+ ' and Your color is  '+type.color)
-              yourSkin+="<div> Your Skin Type is "+ type.skinType + " and your color is "+ type.color+"</div>"
-          })
-          $("#yourColor").html(yourSkin)
+
+        $("#btn").click(function () {
+            var brands='';
+            eyeliners.forEach(function (eyeliner) {
+                console.log(eyeliner);
+              brands+= "<div class='finish'>" + eyeliner.brand+ "</div>"
+            });
+            $("#show").html(brands);
+
+            $(".finish").click(function () {
+                var text = $(this).text();
+
+                text = text + "test test"
+
+                $(this).text(text);
+
+            })
+
+
+        });
+
+
+
+
+
 
     </script>
 </body>
