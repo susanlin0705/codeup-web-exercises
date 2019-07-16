@@ -58,44 +58,44 @@
     </div>
 
 
-    <div id="timer">
-     0 seconds
-    </div>
+<!--    <div id="timer">-->
+<!--     0 seconds-->
+<!--    </div>-->
 
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
+<!--    <button id="start">Start</button>-->
+<!--    <button id="stop">Stop</button>-->
 
 
 
     <script>
 
 
-        var timer;
-        var time = 0;
-
-        function addTime() {
-            time = time+1;
-            $("#timer").text(time + " seconds")
-        }
-
-
-        function startTimer() {
-           timer = window.setInterval(addTime, 1000);
-        }
-
-
-        function stopTimer() {
-             if(timer !== undefined) window.clearInterval(timer);
-        }
-
-
-        $("#start").click(function() {
-            startTimer();
-        });
-
-        $("#stop").click(function() {
-            stopTimer();
-        });
+//        var timer;
+//        var time = 0;
+//
+//        function addTime() {
+//            time = time+1;
+//            $("#timer").text(time + " seconds")
+//        }
+//
+//
+//        function startTimer() {
+//           timer = window.setInterval(addTime, 1000);
+//        }
+//
+//
+//        function stopTimer() {
+//             if(timer !== undefined) window.clearInterval(timer);
+//        }
+//
+//
+//        $("#start").click(function() {
+//            startTimer();
+//        });
+//
+//        $("#stop").click(function() {
+//            stopTimer();
+//        });
 
 
         var skinType=[
@@ -202,6 +202,11 @@
 
 
         });
+
+        $('.liner1').click(function(){
+            console.log(eyeliners[0].finish + " "+eyeliners[0].color)
+            $(this).text(eyeliners[0].finish + " "+eyeliners[0].color)
+        })
 
 
 

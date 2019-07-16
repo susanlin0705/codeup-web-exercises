@@ -52,7 +52,7 @@
 
 
 <h1>Weather Application</h1>
-<button id="btn">Clcik me</button>
+<button id="btn">Celcius</button>
 <div id="location"></div>
 
 <div  class="container">
@@ -117,7 +117,23 @@
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         console.log(lngLat);
-        getWeather(lngLat.lat, lngLat.lng)
+        getWeather(lngLat.lat, lngLat.lng);
+
+
+
+        $("#location").html(lngLat.lat, lngLat.lng);
+    }
+    function reverseGeocode(coordinates, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+            })
+            // to get all the data from the request, comment out the following three lines...
+            .then(function(data) {
+                return data.features[0].place_name;
+            });
     }
 
     marker.on('dragend', onDragEnd);
@@ -134,21 +150,22 @@
 
 
 
-    //
-    // map.on("click",function(e){
-    //     JSON.stringify(e.point)+"<br/>"+ JSON.stringify(e.lnglat);
-    //     console.log(e.lngLat.lat)
-    //     console.log(e.lngLat.lng)
-    //     getWeather(e.lngLat.lat, e.lngLat.lng)
-    //
-    //     if(marker != undefined) marker.remove()
-    //
-    //     marker = new mapboxgl.Marker()
-    //         .setLngLat([e.lngLat.lng, e.lngLat.lat])
-    //         .addTo(map);
-    //
-    //
-    // });
+
+
+    map.on("click",function(e){
+        JSON.stringify(e.point)+"<br/>"+ JSON.stringify(e.lnglat);
+        console.log(e.lngLat.lat)
+        console.log(e.lngLat.lng)
+        getWeather(e.lngLat.lat, e.lngLat.lng)
+
+        if(marker != undefined) marker.remove()
+
+        marker = new mapboxgl.Marker()
+            .setLngLat([e.lngLat.lng, e.lngLat.lat])
+            .addTo(map);
+
+
+    });
 
     // marker.on("click",function(){
     //     getWeather(e.lngLat.lat, e.lngLat.lng)
@@ -196,8 +213,8 @@
 
                 weather += "<div class='col-4 weather-item'>"
                 weather +=  "<div class='day bg-info text-white font-weight-bold'>"+dateObject.toDateString() + "</div>" ;
-                weather += "<div class='tempHigh'>Hightest: " +report.temperatureHigh + "</div>" ;
-                weather += "<div class='tempLow'>Lowest: "  + report.temperatureLow + "</div>" ;
+                weather += "<div class='tempHigh'>Hightest: " +"<span class='temp'>"+ report.temperatureHigh +" &#8457 </span>"+ "</div>" ;
+                weather += "<div class='tempLow'>Lowest: "  + "<span class='temp'>"+ report.temperatureLow +" &#8457 </span>" + "</div>" ;
                 weather += "<div claa='logo'><img src='icon/" + report.url + "'/></div>";
                 weather += "<div class='clouds bg-info text-white font-weight-bold'> SUMMARY </div>";
                 weather += "<div class=' summary'>"+ report.summary +"</div>";
@@ -211,13 +228,21 @@
         })
     }
     $("#btn").click(function () {
-        var tempHigh ;
-        var tempLow;
-        if(tempHigh!==report.temperatureHigh ){
-            tempHigh=(5/9) * ( report.temperatureHigh - 32)
-        }
+        var switchTo = $(this).text()
+        console.log($(this).text());
 
-    })
+        $('.temp').each(function(){
+            console.log($(this).text())
+            var temp = $(this).text()
+            if (temp!==report.temperatureHigh){
+                temp=(report.temperatureHigh - 32) * (5/9)
+            }
+
+        })
+
+
+
+        })
 
 
 
