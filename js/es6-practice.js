@@ -64,12 +64,38 @@ const instructors = [
     'David',
     'Justin',
     'Fer',
-    'Terrell'
+    'Terrell',
+    "Ryan"
 ];
+//
+// instructors.forEach(function(instructor){
+//     console.log(instructor);
+// });
+//
+// 選擇數字並顯示
+// for(let[index, number]of numbers.entities()){
+//     if(index<3){
+//         console.log(number);
+//     }
+// }
+for(let[index,instructor ] of instructors.entries()){
+    if (index<3){
+        console.log(instructor)
+    }
+}
 
-instructors.forEach(function(instructor){
+//顯示全部
+for (let instructor of instructors) {
     console.log(instructor);
-});
+}
+
+
+//可以string
+const myString= "name"
+for(let chr of myString){
+    console.log(chr.toUpperCase())
+}
+
 
 /*
     ARROW FUNCTIONS
@@ -79,14 +105,24 @@ instructors.forEach(function(instructor){
     How can you use fat arrow syntax to refactor the code below?
     Make it as concise as possible.
  */
+//原先函式：
+// function add(x = 2, y = 3){
+//
+//     return x + y;
+// }
 
-function add(x = 2, y = 3){
-    return x + y;
-}
 
-function square(x){
-    return x * x;
-}
+//ＥＳ6函式：
+const add =(x=2,y=3) => x + y;
+console.log(add() );
+
+
+// function square(x){
+//     return x * x;
+// }
+
+const square = x => x * x;
+console.log(square(5));
 /*
     DEFAULT FUNCTION PARAMETER VALUES
     refactor the following so that variable 'greeting' has a value of 'Good
@@ -95,8 +131,8 @@ function square(x){
      Check your work.
  */
 
-const myGreeting = (greeting,name) => {
-    return greeting + name;
+const myGreeting = (greeting="Good morning",name= "Betelgeuse") => {
+    return ` ${greeting} ${name} !`;
 };
 
 console.log(myGreeting());
@@ -112,10 +148,11 @@ const cat = "Tom";
 const mouse = "Jerry";
 
 const pals = {
-    dog: dog,
-    cat: cat,
-    mouse: mouse
+    dog,
+    cat,
+    mouse
 };
+console.log(pals);
 
 /*
     OBJECT DESTRUCTURING
@@ -133,10 +170,12 @@ const myCar = {
 };
 
 const carInfo = (car) => {
-    var make = myCar.make;
-    var model = myCar.model;
+    // var make = myCar.make;
+    // var model = myCar.model;
+    const {make, model, color}=car;
     console.log(make);
     console.log(model);
+    console.log(color);
 };
 
 carInfo(myCar);

@@ -38,6 +38,10 @@
                 margin-bottom: 20px;
             }
         .weather-item {
+        /*    background: #CC95C0;  !* fallback for old browsers *!*/
+        /*    background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  !* Chrome 10-25, Safari 5.1-6 *!*/
+        /*    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+
             text-align: center;
             background: #654ea3;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to top, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
@@ -75,7 +79,6 @@
 
 
 
-<script src="js/keys.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!--ＡＰＩ使用-->
 <script>
@@ -116,15 +119,19 @@
 
     function onDragEnd() {
         var lngLat = marker.getLngLat();
-        console.log(lngLat);
 
+    console.log(lngLat);
+        getWeather(lngLat.lat, lngLat.lng);
         reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
             // logs the address for The Alamo
-            getWeather(lngLat.lat, lngLat.lng);
+            console.log(results);
+
+
         });
-
-
         $("#location").html(results);
+
+
+
     }
 
 
