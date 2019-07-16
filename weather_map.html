@@ -52,6 +52,7 @@
 
 
 <h1>Weather Application</h1>
+<button id="btn">Clcik me</button>
 <div id="location"></div>
 
 <div  class="container">
@@ -105,22 +106,49 @@
     });
 
     map.addControl(geocoder);
-    var marker;
+    // var marker;
 
-    map.on("click",function(e){
-        JSON.stringify(e.point)+"<br/>"+ JSON.stringify(e.lnglat);
-        console.log(e.lngLat.lat)
-        console.log(e.lngLat.lng)
-        getWeather(e.lngLat.lat, e.lngLat.lng)
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.4916, 29.4252])
+        .addTo(map);
 
-        if(marker != undefined) marker.remove()
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        console.log(lngLat);
+        getWeather(lngLat.lat, lngLat.lng)
+    }
 
-        marker = new mapboxgl.Marker()
-            .setLngLat([e.lngLat.lng, e.lngLat.lat])
-            .addTo(map);
+    marker.on('dragend', onDragEnd);
 
 
-    });
+
+
+
+
+
+
+
+
+
+
+
+    //
+    // map.on("click",function(e){
+    //     JSON.stringify(e.point)+"<br/>"+ JSON.stringify(e.lnglat);
+    //     console.log(e.lngLat.lat)
+    //     console.log(e.lngLat.lng)
+    //     getWeather(e.lngLat.lat, e.lngLat.lng)
+    //
+    //     if(marker != undefined) marker.remove()
+    //
+    //     marker = new mapboxgl.Marker()
+    //         .setLngLat([e.lngLat.lng, e.lngLat.lat])
+    //         .addTo(map);
+    //
+    //
+    // });
 
     // marker.on("click",function(){
     //     getWeather(e.lngLat.lat, e.lngLat.lng)
@@ -182,7 +210,14 @@
 
         })
     }
+    $("#btn").click(function () {
+        var tempHigh ;
+        var tempLow;
+        if(tempHigh!==report.temperatureHigh ){
+            tempHigh=(5/9) * ( report.temperatureHigh - 32)
+        }
 
+    })
 
 
 
