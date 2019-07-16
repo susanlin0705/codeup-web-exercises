@@ -169,13 +169,13 @@ const myCar = {
     color
 };
 
-const carInfo = (car) => {
+const carInfo = ({make,model}) => {
     // var make = myCar.make;
     // var model = myCar.model;
-    const {make, model, color}=car;
+
     console.log(make);
     console.log(model);
-    console.log(color);
+
 };
 
 carInfo(myCar);
@@ -186,3 +186,8 @@ carInfo(myCar);
      file? Use Array Destructuring to return the first 3 instructors. Use
       the curriculum example as a reference.
  */
+
+const [e,f,g] = instructors;
+console.log(e);
+console.log(f);
+console.log(g);
