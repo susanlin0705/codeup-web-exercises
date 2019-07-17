@@ -38,6 +38,11 @@ const greaterThanSix = myNumbers.filter(function (x) {
     return x>6;
 });
 
+
+const sumNumbers= myNumbers.reduce((currentSum,currentElement)=>{
+    return currentSum + currentElement;
+},10);
+console.log(sumNumbers);
 console.log(myNewNumbers);
 console.log(greaterThanSix);
 
@@ -73,3 +78,26 @@ console.log(greaterThanThree);
     REDUCE
     using .reduce, return the total years between all books.
  */
+const totalYears = books.reduce(function (total, years) {
+    const manyYears= years.yearsInPublication;
+    return total + manyYears
+},0);
+console.log(totalYears);
+// 記得要放後面的數值
+
+
+
+//reduce the longest name
+//using reduce to return the longest author name;
+const longestName = books.reduce(function(previous, current){
+    const currentName = current.author;
+    if(currentName.length > previous.length) {
+        return currentName;
+    }else {
+        return previous;
+    }
+},'');
+console.log(longestName);
+
+
+
