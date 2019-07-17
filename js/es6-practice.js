@@ -191,3 +191,12 @@ const [e,f,g] = instructors;
 console.log(e);
 console.log(f);
 console.log(g);
+
+
+const goodMorning = (sayHi="Good Morning", cohort='Betel')=>{
+    return `${sayHi} ${cohort} !`
+};
+console.log(goodMorning());
+console.log(goodMorning(undefined , "Ceres"));
+
+使用undefined會有原先設定

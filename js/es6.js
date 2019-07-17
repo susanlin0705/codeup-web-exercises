@@ -27,11 +27,7 @@ const users = [
         email: 'justin@codeup.com',
         languages: ['html', 'css', 'javascript', 'php']
     }
-    // {
-    //     name: 'Susan',
-    //     email: 'susan.lin0705@gmail.com',
-    //     languages: ['html', 'css', 'javascript']
-    // },
+
 
 ];
 
