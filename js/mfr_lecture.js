@@ -61,14 +61,23 @@ const bookAuthors = books.map(bookAuthor=> {
 });
 console.log(bookAuthors);
 
-const bookGenres = books.map (bookgenre=>{
-    return bookgenre.genres;
+const bookgenres = books.map((genre)=>{
+    return genre.genres;
 });
-console.log(bookGenres);
+console.log(bookgenres);
+
+const bookYears = books.map((bookYear)=>{
+    return bookYear.yearsInPublication;
+});
+console.log(bookYears);
 /*
     FILTER
     using .filter, create an array that returns all books with at least 3 genres
  */
+const moreThanThree = books.filter(function(three){
+    return three.genres.length>2
+});
+console.log(moreThanThree)
 const greaterThanThree = books.filter(num=>{
     return num.genres.length>=3
 });
@@ -99,5 +108,36 @@ const longestName = books.reduce(function(previous, current){
 },'');
 console.log(longestName);
 
+//fizzbuzz
+// const fizzbuzz = input=>{
+//     for(var i=1; i<input; i++){
+//         if(i%15===0){
+//             console.log("fizzbuzz")
+//         }else if(i%3===0){
+//             console.log('fizz')
+//         }else if(i%5===0){
+//             console.log('buzz')
+//         }else{
+//             console.log(i)
+//         }
+//             }
+//
+// }
+// console.log(fizzbuzz(100));
 
+const fizzbuzz = input=>{
+    for(var i = 0; i<input; i++){
+        if (i%15===0){
+            console.log("fizzbuzz")
+        }else if(i%3===0){
+            console.log("fizz")
+        }else if (i%5===0){
+            console.log("buzz")
+        }else{
+            console.log(i)
+        }
+    }
+};
+
+console.log(fizzbuzz(100));
 

@@ -73,12 +73,12 @@ let names = [];
 //     console.log(user.email );
 //     return emails.push(user.email);
 // }) ;
-user.forEach(user=>emails.push(user.email));
+users.forEach(user=>emails.push(user.email));
 //if  you want to put console.log in it then you need return
 // users.forEach(function(user) {
 //     return names.push(user.name);
 // });
-user.forEach(user=>names.push(user.name));
+users.forEach(user=>names.push(user.name));
 // users.forEach(user=> {
 //     console.log(user.name);
 //     return names.push(user.name);

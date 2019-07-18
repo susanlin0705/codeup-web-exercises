@@ -55,10 +55,11 @@ console.log(emailNames);
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
 const totalYears = users.reduce((instructor, years)=>{
-    const howManyYears = years.yearsOfExperience
+    const howManyYears = years.yearsOfExperience;
     return (instructor +howManyYears);
 },0);
-console.log(totalYears/ users.length);
+const average =totalYears/ users.length
+console.log(average);
 
 // Use .reduce to get the longest email from the list of users.
 
@@ -72,13 +73,16 @@ const longestEmail = users.reduce((previous, current)=>{
 },'');
 console.log(longestEmail);
 
-const usersName = users.reduce((allUserName, user)=>{
-    const eachUser = user.name+ ", ";
-    return  allUserName + eachUser
+const usersName = users.reduce((allUserName, user,index,arr)=>{
+    if(index===(arr.length-1)) {
+        return `${allUserName} ${user.name}.`;
+    }else{
+        return `${allUserName} ${user.name},`;
+    }
 
-},'');
+},'Your instructors are: ');
 
-console.log(`Your instructors are ${usersName}.`);
+console.log(usersName);
 
 
 const allTheLanguages = users.reduce((total, current)=>{
@@ -94,7 +98,18 @@ const filterLanguage= new Set(allTheLanguages);
 
 console.log(filterLanguage);
 
+//另一種解法
+const uniqueLanguages = users.reduce(function(prev, current){
+    const langs = current.languages;
+    for(const lang of langs){
+        prev.add(lang);
+    }
+    return prev;
 
+},new Set);
+//
+// Set =====> .add()
+// array =======>.push()
 
 
 
