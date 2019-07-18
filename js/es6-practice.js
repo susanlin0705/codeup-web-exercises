@@ -199,4 +199,13 @@ const goodMorning = (sayHi="Good Morning", cohort='Betel')=>{
 console.log(goodMorning());
 console.log(goodMorning(undefined , "Ceres"));
 
-使用undefined會有原先設定
+// 使用undefined會有原先設定
+
+
+fetch('https://api.github.com/users')
+    .then(response=>response.json())
+    .then(usersArray=>{
+        for(let user of usersArray){
+            console.log(user.html_url);
+        }
+    })
